@@ -21,9 +21,9 @@ const api = axios.create({
 api.interceptors.request.use(async function (options) {
   // we're going to inject the bearer token from the getToken promsie we created. 
   return options
-}), function (error) {
+}, function (error) {
   console.log('request error:', error)
   return Promise.reject(error)
-}
+})
 
 export default api
