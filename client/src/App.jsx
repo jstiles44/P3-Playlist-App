@@ -6,6 +6,7 @@ import Profile from "./screens/Profile/Profile"
 import SignIn from "./screens/SignIn/SignIn"
 import SignUp from "./screens/SignUp/SignUp"
 import SignOut from "./screens/SignOut/SignOut"
+import { verifyUser } from './services/users'
 import { Route, Switch, Redirect } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { verifyUser } from './services/users'
