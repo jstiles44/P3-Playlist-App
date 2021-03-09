@@ -30,7 +30,7 @@ const Details = (props) => {
           alt={"album art for this song"}
         />
         <div className="detail">
-          <div className="name">{song.name}</div>
+          <div className="name">{song.title}</div>
           <div className="album">{song.album}</div>
           <div className="genre">{song.genre}</div>
           <div className="release-year">{song.releaseYear}</div>
