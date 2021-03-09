@@ -44,7 +44,7 @@ const main = async () => {
         },
     {
         "title": "Ghost Ship",
-        "artist": "Blur,
+        "artist": "Blur",
         "releaseYear": "2015",
         "genre": "Alternative",
         "albumCover": "https://images.genius.com/63bdd1821deba36e8ddaf164840dffd1.562x562x1.jpg",
