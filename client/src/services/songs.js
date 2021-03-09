@@ -12,7 +12,7 @@ throw error
 export const getSong = async (id) => {
   try {
     const response = await api.get(`/songs/${id}`)
-    response.data
+    return response.data
   } catch (error) {
     throw error
   }
