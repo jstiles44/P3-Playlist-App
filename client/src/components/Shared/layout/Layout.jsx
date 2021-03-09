@@ -7,7 +7,7 @@ const Layout = (props) => {
   return (
     <div>
       <div className='layout'>
-        <Nav user={user.props} />
+        <Nav user={props.user} />
       </div>
       <div className='layout-children'>
         {props.children}
