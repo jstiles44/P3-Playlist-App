@@ -13,7 +13,7 @@ const getToken = () => {
 //setting our production / local api path. use 2 tabs in terminal to operate on the local-host for backend.
 //need to insert our deployed heroku api once it's done. 
 const api = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? 'our deployed heroku api' : 'http://localhost:3000/api'
+  baseURL: process.env.NODE_ENV === 'production' ? 'https://songsplayu.herokuapp.com/api' : 'http://localhost:3000/api'
 })
 
 
