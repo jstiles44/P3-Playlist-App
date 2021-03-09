@@ -9,7 +9,6 @@ import SignOut from "./screens/SignOut/SignOut"
 import { verifyUser } from './services/users'
 import { Route, Switch, Redirect } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { verifyUser } from './services/users'
 
 function App() {
   const [user, setUser] = useState(null)
