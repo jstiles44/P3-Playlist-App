@@ -11,29 +11,40 @@ import { useState, useEffect } from "react"
 
 
 function App() {
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await verifyUser()
+      user ? setUser(user) : setUser(null)
+    }
+    fetchUser()
+  }, [])
+
+  const clearUser = () => setUser(null)
   return (
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home user={user} />
         </Route>
         <Route exact path="/sign-up">
-          <SignUp />
+          <SignUp user={user} />
         </Route>
         <Route exact path="/sign-in">
-          <SignIn />
+          <SignIn user={user} />
         </Route>
         <Route exact path="/sign-out">
-          <SignOut />
+          <SignOut user={user} />
         </Route>
         <Route exact path="/explore">
-          <Explore />
+          <Explore user={user} />
         </Route>
         <Route exact path="/explore/:id">
-          <Details />
+          <Details user={user} />
         </Route>
         <Route exact path="/profile">
-          <Profile />
+          <Profile user={user} />
         </Route>
       </Switch>
     </div>
