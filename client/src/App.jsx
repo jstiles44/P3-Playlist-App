@@ -10,6 +10,7 @@ import { verifyUser } from './services/users'
 import { Route, Switch, Redirect } from "react-router-dom"
 import { useState, useEffect } from "react"
 
+
 function App() {
   const [user, setUser] = useState(null)
 
