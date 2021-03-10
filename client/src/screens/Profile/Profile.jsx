@@ -6,7 +6,7 @@ const Profile = (props) => {
   return (
     <Layout user={props.user}>
       <div>hi {props.user.username}</div>
-      <div></div>
+      <div>{props.user.playlist}</div>
     </Layout>
   )
 }
