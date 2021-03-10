@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import "./Explore.css"
 import Song from "../../components/songExplore/Song"
-import Filter from "../../utils/filter"
 import Sort from "../../components/sort/Sort"
 import Layout from "../../components/Shared/layout/Layout"
 import { getSongs } from '../../services/songs'
@@ -57,7 +56,7 @@ const Explore = (props) => {
 
   return (
     <Layout user={props.user}>
-      <Filter onSubmit={handleSubmit} onChange={handleFilter} />
+      {/* <Filter onSubmit={handleSubmit} onChange={handleFilter} /> */}
       <Sort onsubmit={handleSubmit} onChange={handleSort} />
       <div className="songs-explore">
         {songsJSX}

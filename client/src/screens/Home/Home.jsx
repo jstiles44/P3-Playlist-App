@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { getSongs } from '../../services/songs.js';
-import Carousel from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel';
+import Layout from '../../components/Shared/layout/Layout.jsx'
 
-const Home = () => {
+const Home = (props) => {
 
   const [songs, setSongs] = useState([]);
   const [recentlyAdded, setRecentlyAdded] = useState([]);
@@ -20,7 +21,7 @@ const Home = () => {
   
   
   return (
-    <div>
+    <Layout user={props.user}>
       <Carousel className='recently-added'>
         {recentlyAdded.map((song, index) => (
           <div key={index}>
@@ -31,7 +32,7 @@ const Home = () => {
           </div>
         ))}
       </Carousel>
-    </div>
+      </Layout>
   );
 };
 
