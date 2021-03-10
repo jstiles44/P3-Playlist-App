@@ -1,4 +1,4 @@
-
+import "./Footer.css"
 
 const Footer = () => {
   return (
@@ -6,7 +6,7 @@ const Footer = () => {
       <div className='will'>
         Will Wardlow
          <a href='https://www.linkedin.com/in/will-wardlow/'>
-          <img classname='linked-in'src='https://www.iconsdb.com/icons/preview/color/7BAE7F/linkedin-4-xxl.png' alt='linkedin-page' />
+          <img className='linked-in'src='https://www.iconsdb.com/icons/preview/color/7BAE7F/linkedin-4-xxl.png' alt='linkedin-page' />
         </a>
         <a href='https://github.com/willwardlow'>
           <img className= 'github' src='https://www.iconsdb.com/icons/preview/color/7BAE7F/github-10-xxl.png' alt='github-page' />
@@ -15,7 +15,7 @@ const Footer = () => {
       <div className='lauren'>
         Lauren Francis
         <a href='https://www.linkedin.com/in/lauren-petto/'>
-          <img classname='linked-in'src='https://www.iconsdb.com/icons/preview/color/7BAE7F/linkedin-4-xxl.png' alt='linkedin-page' />
+          <img className='linked-in'src='https://www.iconsdb.com/icons/preview/color/7BAE7F/linkedin-4-xxl.png' alt='linkedin-page' />
         </a>
         <a href='https://github.com/LaurenFrancisNYC'>
           <img className= 'github' src='https://www.iconsdb.com/icons/preview/color/7BAE7F/github-10-xxl.png' alt='github-page' />
@@ -24,7 +24,7 @@ const Footer = () => {
       <div className='jake'>
         Jake Stiles
         <a href='https://www.linkedin.com/in/jacob-stiles-863b34152/'>
-          <img classname='linked-in'src='https://www.iconsdb.com/icons/preview/color/7BAE7F/linkedin-4-xxl.png' alt='linkedin-page' />
+          <img className='linked-in'src='https://www.iconsdb.com/icons/preview/color/7BAE7F/linkedin-4-xxl.png' alt='linkedin-page' />
         </a>
         <a href='https://github.com/jstiles44'>
           <img className= 'github' src='https://www.iconsdb.com/icons/preview/color/7BAE7F/github-10-xxl.png' alt='github-page' />
@@ -33,7 +33,7 @@ const Footer = () => {
       <div className='mike'>
         Mike Pulido
         <a href='https://www.linkedin.com/in/mpulido03/'>
-          <img classname='linked-in'src='https://www.iconsdb.com/icons/preview/color/7BAE7F/linkedin-4-xxl.png' alt='linkedin-page' />
+          <img className='linked-in' src='https://www.iconsdb.com/icons/preview/color/7BAE7F/linkedin-4-xxl.png' alt='linkedin-page' />
         </a>
         <a href='https://github.com/mtpulido'>
           <img className= 'github' src='https://www.iconsdb.com/icons/preview/color/7BAE7F/github-10-xxl.png' alt='github-page' />

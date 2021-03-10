@@ -22,7 +22,7 @@ const Details = (props) => {
   }
 
   return (
-    <Layout>
+    <Layout user={props.user}>
       <div className="song-details">
         <img
           className="album-art"

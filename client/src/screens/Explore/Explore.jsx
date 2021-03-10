@@ -49,10 +49,10 @@ const Explore = (props) => {
     event.preventDefault()
   }
 
-  const songsJSX = queriedSongs.map((song, index) => {
+  const songsJSX = queriedSongs.map((song, index) => (
     <Song title={song.title} _id={song._id} albumCover={song.albumCover} artist={song.artist} key={index}/>
 
-  })
+  ))
 
   return (
     <Layout user={props.user}>
