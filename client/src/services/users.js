@@ -48,3 +48,13 @@ export const verifyUser = async () => {
   }
   return false
 }
+
+
+export const editUser = async(id, user) => {
+  try {
+    const response = await api.put(`/${id}`, user)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}

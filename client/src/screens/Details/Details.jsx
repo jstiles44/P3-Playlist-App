@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import { getSong } from "../../services/songs";
 import Layout from "../../components/Shared/layout/Layout";
+import {editUser} from "../../services/users"
 
 const Details = (props) => {
   const [song, setSong] = useState(null);
   const { id } = useParams();
   const [isLoaded, setLoaded] = useState(false);
+  const [userData, setUserData] = useState({
+    username: props.user.username,
+    email: props.user.email,
+    playlist: props.user.playlist,
+  })
+  
 
   useEffect(() => {
     const fetchSong = async () => {
@@ -20,6 +27,20 @@ const Details = (props) => {
   if (!isLoaded) {
     return <p>Loading...</p>;
   }
+
+
+ 
+  
+  const addToPlaylist = async () => {
+    setUserData({
+      username: props.user.username,
+      email: props.user.email,
+      playlist: [...props.user.playlist, song] 
+    })
+  const id = props.user._id
+ await editUser(id, userData)
+}
+
 
   return (
     <Layout user={props.user}>
@@ -35,10 +56,8 @@ const Details = (props) => {
           <div className="genre">{song.genre}</div>
           <div className="release-year">{song.releaseYear}</div>
           <div className="song-length">{song.songLength}</div>
-          <button className="add-to-playlist">
-            <Link className="add-to-playlist-link" to={`/`}>
-              Add to Playlist
-            </Link>
+          <button className="add-to-playlist" onClick={addToPlaylist}>
+              Add to Playlist 
           </button>
         </div>
       </div>

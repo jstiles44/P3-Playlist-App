@@ -15,8 +15,7 @@ const signUp = async (req, res) => {
     const user = new User({
       username,
       email,
-      password_digest,
-      playlist
+      password_digest
     })
     
     await user.save()
@@ -40,7 +39,8 @@ const signIn = async (req, res) => {
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
         username: user.username,
-        email: user.email
+        email: user.email,
+        playlist: user.playlist,
       }
 
       const token = jwt.sign(payload, TOKEN_KEY)
@@ -66,10 +66,26 @@ const signIn = async (req, res) => {
   }
 
 const changePassword = async (req, res) => { }
+
+
+
+const updateUser = async (req, res) => {
+  const { id } = req.params
+  await User.findByIdAndUpdate(id, req.body, { new: true }, (error, user) => {
+    if (error) {
+      return res.status(500).json({ error: error.message })
+    }
+    if (!user) {
+      return res.status(404).json({ message: 'User not found!'})
+    }
+    res.status(200).json(user)
+  })
+}
   
   module.exports = {
     signUp,
     signIn,
     verify,
-    changePassword
+    changePassword,
+    updateUser
 }
