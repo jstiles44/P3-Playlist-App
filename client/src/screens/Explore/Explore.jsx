@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 import "./Explore.css"
-import Song from "../../components/songExplore"
+import Song from "../../components/songExplore/Song"
 import Filter from "../../utils/filter"
 import Sort from "../../components/sort/Sort"
 import Layout from "../../components/Shared/layout/Layout"
-import { getSongs } from '../../services/products'
+import { getSongs } from '../../services/songs'
 import {titleAZ, titleZA, artistAZ, artistZA} from "../../utils/sort"
 
-const Songs = (props) => {
+const Explore = (props) => {
   const [allSongs, setAllSongs] = useState([])
   const [queriedSongs, setQueriedSongs] = useState([])
   const [sortType, setSortType] = useState([])
@@ -65,3 +65,5 @@ const Songs = (props) => {
     </Layout>
   )
 }
+
+export default Explore 
