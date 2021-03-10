@@ -1,5 +1,6 @@
 import Footer from '../footer/Footer.jsx'
 import Nav from '../Nav/Nav.jsx'
+import "./Layout.css"
 
 import React from 'react';
 
