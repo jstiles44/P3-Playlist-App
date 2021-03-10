@@ -13,8 +13,10 @@ const SignUp = (props) => {
         password: '',
         passwordConfirmation: '',
         isError: false,
-        errorMsg: ''
+        errorMsg: '',
+      
     })
+  
 
     const handleChange = event =>
         setForm({
