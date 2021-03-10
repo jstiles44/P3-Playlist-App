@@ -21,6 +21,11 @@ const Details = (props) => {
     return <p>Loading...</p>;
   }
 
+//   const handleAddSong = () => {
+  
+// }
+
+
   return (
     <Layout user={props.user}>
       <div className="song-details">
