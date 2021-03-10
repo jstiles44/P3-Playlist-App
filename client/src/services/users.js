@@ -50,9 +50,9 @@ export const verifyUser = async () => {
 }
 
 
-export const editUser = async(id, user) => {
+export const addSong = async (id, song) => {
   try {
-    const response = await api.put(`/${id}`, user)
+    const response = await api.patch(`/${id}/songs`, song)
     return response.data
   } catch (error) {
     throw error

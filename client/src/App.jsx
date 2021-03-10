@@ -42,7 +42,7 @@ function App() {
           <Explore user={user} />
         </Route>
         <Route exact path="/explore/:id">
-          <Details user={user} />
+          <Details user={user} setUser={setUser}/>
         </Route>
         <Route exact path="/profile">
           <Profile user={user} />

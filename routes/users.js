@@ -7,6 +7,6 @@ router.post('/sign-up', controllers.signUp)
 router.post('/sign-in', controllers.signIn)
 router.get('/verify', controllers.verify)
 router.post('/change-password', controllers.changePassword)
-router.put('/:id', controllers.updateUser)
+router.patch('/:id/songs', controllers.addSong)
 
 module.exports = router

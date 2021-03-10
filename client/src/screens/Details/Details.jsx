@@ -2,17 +2,13 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { getSong } from "../../services/songs";
 import Layout from "../../components/Shared/layout/Layout";
-import {editUser} from "../../services/users"
+import {addSong} from "../../services/users"
 
 const Details = (props) => {
   const [song, setSong] = useState(null);
   const { id } = useParams();
   const [isLoaded, setLoaded] = useState(false);
-  const [userData, setUserData] = useState({
-    username: props.user.username,
-    email: props.user.email,
-    playlist: props.user.playlist,
-  })
+  console.log(props.user)
   
 
   useEffect(() => {
@@ -28,17 +24,13 @@ const Details = (props) => {
     return <p>Loading...</p>;
   }
 
-
- 
+  
   
   const addToPlaylist = async () => {
-    setUserData({
-      username: props.user.username,
-      email: props.user.email,
-      playlist: [...props.user.playlist, song] 
-    })
-  const id = props.user._id
- await editUser(id, userData)
+    const userId = props.user.id
+    console.log("songid", song._id)
+    await addSong(userId, song)
+    console.log(props.user)
 }
 
 
