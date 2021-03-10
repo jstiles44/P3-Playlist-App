@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const User = require('../models/user')
 const db = require('../db/connection')
+const Song = require('../models/song')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -41,6 +42,7 @@ const signIn = async (req, res) => {
         username: user.username,
         email: user.email,
         playlist: user.playlist,
+        id: user._id
       }
 
       const token = jwt.sign(payload, TOKEN_KEY)
@@ -69,17 +71,24 @@ const changePassword = async (req, res) => { }
 
 
 
-const updateUser = async (req, res) => {
-  const { id } = req.params
-  await User.findByIdAndUpdate(id, req.body, { new: true }, (error, user) => {
-    if (error) {
-      return res.status(500).json({ error: error.message })
-    }
-    if (!user) {
-      return res.status(404).json({ message: 'User not found!'})
-    }
-    res.status(200).json(user)
-  })
+const addSong = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    console.log(req.body._id)
+    const song = await Song.findById(req.body._id)
+    user.playlist.push(song)
+    console.log(user)
+    await user.save()
+    const userPayload = { 
+      username: user.username,
+      email: user.email,
+      playlist: user.playlist,
+      id: user._id
+  }
+    res.json(userPayload)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
 }
   
   module.exports = {
@@ -87,5 +96,5 @@ const updateUser = async (req, res) => {
     signIn,
     verify,
     changePassword,
-    updateUser
+    addSong
 }
