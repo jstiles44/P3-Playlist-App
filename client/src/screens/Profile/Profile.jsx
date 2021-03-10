@@ -1,14 +1,23 @@
-import Layout from "../../components/Shared/layout/Layout"
-
+import Layout from "../../components/Shared/layout/Layout";
+import SongPlaylist from "../../components/playlist/SongPlaylist";
 
 const Profile = (props) => {
-  console.log(props.user)
+  const { playlist } = props.user;
+
+  const playlistSongsJSX = playlist.map((song) => (
+    <SongPlaylist
+      title={song.title}
+      artist={song.artist}
+      songLength={song.songLength}
+    />
+  ));
+
   return (
     <Layout user={props.user}>
       <div>hi {props.user.username}</div>
-      <div>{props.user.playlist}</div>
+      <div>{playlistSongsJSX}</div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
