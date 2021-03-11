@@ -6,6 +6,26 @@
   z-index: 2;
   top: 0;
   position: sticky;
-  height: 80px;
+  height: 100px;
+  align-items: center;
 }
+
+.will , .lauren, .mike, .jake {
+  max-height: 50%;
+  display: flex;
+  color: #73D499;
+  align-items: center;
+  font-weight: bold;
+}
+
+.linked-in, .github{
+  height: 30px;
+}
+
+.linked-in {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
 
