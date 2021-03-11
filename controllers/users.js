@@ -94,11 +94,15 @@ const addSong = async (req, res) => {
 const deleteSong = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
-
-    const song = await Song.findById(req.body._id)
-
-    user.playlist.findByIdAndDelete(song)
-    
+    console.log(req.body.song)
+    const downSong = await Song.findById(req.body.song)
+    const userPlaylist = user.playlist.filter(song => {
+      return !song._id.equals(downSong._id)
+    })
+    // const song = await User.playlist.findById({_id:req.body._id})
+  //  console.log(userPlaylist)
+    user.playlist = userPlaylist
+    console.log(user.playlist)
     await user.save()
     const userPayload = { 
       username: user.username,
