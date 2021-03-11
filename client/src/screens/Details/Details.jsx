@@ -8,7 +8,6 @@ const Details = (props) => {
   const [song, setSong] = useState(null);
   const { id } = useParams();
   const [isLoaded, setLoaded] = useState(false);
-  console.log(props.user)
   
 
   useEffect(() => {
@@ -27,10 +26,8 @@ const Details = (props) => {
   
   
   const addToPlaylist = async () => {
-    const userId = props.user.id
-    console.log("songid", song._id)
-    await addSong(userId, song)
-    console.log(props.user)
+    const response = await addSong(props.user.id, song)
+    props.setUser(response)
 }
 
 

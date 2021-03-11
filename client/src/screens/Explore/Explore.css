@@ -1,0 +1,18 @@
+.songs-explore {
+  background-color: #454851;
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.filter-sort-container-explore {
+  background-color: #454851;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  padding-top: 30px;
+  align-items: center;
+  height: 50px;
+}

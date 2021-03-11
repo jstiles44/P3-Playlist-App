@@ -1,0 +1,29 @@
+.song-explore {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 20px;
+background-color: #33353C;
+width: 250px;
+height: 340px;
+padding: 7px;
+box-shadow:  0 0 4px black;
+}
+
+.song-explore:hover {
+  transform: scale(1.03);
+  box-shadow:  0 0 15px black;
+  transition: .5s;
+}
+
+.album-cover-explore {
+  width: 250px;
+  max-height: 300px;
+}
+
+.title-explore,
+.artist-explore {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #73d499;
+}
