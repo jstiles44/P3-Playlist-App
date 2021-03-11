@@ -1,5 +1,5 @@
 import React from 'react'
-import './Filter'
+import './Filter.css'
 
 const Filter = (props) => {
   return (
@@ -17,3 +17,5 @@ const Filter = (props) => {
     
   )
 }
+
+export default Filter

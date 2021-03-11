@@ -3,7 +3,7 @@ import "./Footer.css"
 const Footer = () => {
   return (
     <div className='footer'>
-      {/* <div className='will'>
+      <div className='will'>
         Will Wardlow
          <a href='https://www.linkedin.com/in/will-wardlow/'>
           <img className='linked-in'src='https://www.iconsdb.com/icons/preview/color/7BAE7F/linkedin-4-xxl.png' alt='linkedin-page' />
@@ -38,7 +38,7 @@ const Footer = () => {
         <a href='https://github.com/mtpulido'>
           <img className= 'github' src='https://www.iconsdb.com/icons/preview/color/7BAE7F/github-10-xxl.png' alt='github-page' />
         </a>
-      </div> */}
+      </div>
     </div>
   );
 };
