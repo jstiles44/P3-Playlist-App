@@ -1,4 +1,8 @@
 .images {
   display: inline-flex;
   width: 30vw;
+  padding-left: 50px;
+  align-self: flex-start;
+  padding-top: 100px;
+  padding-left: 80px;
 }

@@ -25,10 +25,13 @@ const Home = (props) => {
 
   return (
     <Layout user={props.user}>
+      <div className='home-body'>
 
       <SongCarousel recentlyAdded={recentlyAdded}/>
 
       <ImageCarousel />
+        
+      </div>
 
       </Layout>
   );
