@@ -4,6 +4,7 @@ import { getSong } from "../../services/songs";
 import Layout from "../../components/Shared/layout/Layout";
 import { addSong } from "../../services/users";
 import "./Details.css";
+import { Link } from "react-router-dom";
 
 const Details = (props) => {
   const [song, setSong] = useState(null);
@@ -28,6 +29,26 @@ const Details = (props) => {
     props.setUser(response);
   };
 
+  const unauthenticatedOptions = (
+    <>
+      <Link to="/sign-in">
+        <div className="login_to_edit">
+          <button className=" button_slide slide_right">
+            Login to edit your playlist
+          </button>
+        </div>
+      </Link>
+    </>
+  );
+
+  const authenticatedOptions = (
+    <>
+      <button className="button_slide slide_right" onClick={addToPlaylist}>
+        Add to Playlist
+      </button>
+    </>
+  );
+
   return (
     <Layout user={props.user}>
       <div className="song-details">
@@ -45,13 +66,7 @@ const Details = (props) => {
             <div className="release-year">Release Year: {song.releaseYear}</div>
             <div className="song-length">Length: {song.songLength}</div>
           </div>
-          <button
-            className="button_slide slide_right"
-            // className="add-to-playlist"
-            onClick={addToPlaylist}
-          >
-            Add to Playlist
-          </button>
+          {props.user ? authenticatedOptions : unauthenticatedOptions}
         </div>
       </div>
     </Layout>

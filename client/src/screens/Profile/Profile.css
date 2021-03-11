@@ -49,6 +49,7 @@ grid-template-areas:
 }
 
 .playlist-labels {
+  font-family: "Lato", sans-serif;
   display: flex;
   height: 40px;
   border-bottom: 1px solid lightgrey;
@@ -102,6 +103,8 @@ grid-template-areas:
   font-size: 20px;
   margin-left: 5px;
   margin-bottom: 0px;
+  font-family: "Lato", sans-serif;
+
 }
 
 
