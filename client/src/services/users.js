@@ -61,7 +61,7 @@ export const addSong = async (id, song) => {
 
 export const deleteSong = async (id, song) => {
   try {
-    const response = await api.delete(`/${id}/songs`, song)
+    const response = await api.patch(`/${id}/playlist`, {song})
     return response.data
   } catch (error) {
     throw error
