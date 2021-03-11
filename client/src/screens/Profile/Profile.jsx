@@ -20,6 +20,9 @@ const Profile = (props) => {
       title={song.title}
       artist={song.artist}
       songLength={song.songLength}
+      songId={song._id}
+      userId={props.user.id}
+      setUser={props.setUser}
     />
   ));
 

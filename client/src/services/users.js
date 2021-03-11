@@ -58,3 +58,12 @@ export const addSong = async (id, song) => {
     throw error
   }
 }
+
+export const deleteSong = async (id, song) => {
+  try {
+    const response = await api.delete(`/${id}/songs`, song)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
