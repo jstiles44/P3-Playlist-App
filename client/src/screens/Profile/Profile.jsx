@@ -25,6 +25,7 @@ const Profile = (props) => {
 
   const playlistFavoritesJSX = playlist.slice(0, 3).map((song) => (
     <Favorites
+      // id={song._id}
       title={song.title}
       albumCover={song.albumCover}
     />
@@ -51,6 +52,7 @@ const Profile = (props) => {
         </div>
 
         <div className="favorites-profile">
+          <div className="favorites-label">Your Favorites:</div>
           {loading ? (
             <div className="loading-container">
               <div className="loader"></div>
