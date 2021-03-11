@@ -1,8 +1,8 @@
 .nav {
-  width: 100%;
+  max-width: 100%;
   background-color: #33353C;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   z-index: 2;
   top: 0;
   position: sticky;
@@ -11,7 +11,30 @@
 
 a {
   text-decoration: none;
-  color: white;
+  color: #73D499;
+}
+
+.logo{
+  font-size: 36px;
+  display: flex;
+  padding-left: 30px;
+  padding-top: 15px;
+  align-self: flex-start;
+}
+
+.link{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.link:hover{
+  color: #FCEFF9;
+  text-decoration: underline;
+}
+
+nav :last-child{
+  padding-right: 15px;
 }
 
 
