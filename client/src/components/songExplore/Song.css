@@ -8,6 +8,9 @@ width: 250px;
 height: 340px;
 padding: 7px;
 box-shadow:  0 0 4px black;
+transition: .5s;
+border-radius: 20px;
+
 }
 
 .song-explore:hover {
@@ -19,6 +22,7 @@ box-shadow:  0 0 4px black;
 .album-cover-explore {
   width: 250px;
   max-height: 300px;
+  border-radius: 20px;
 }
 
 .title-explore,
