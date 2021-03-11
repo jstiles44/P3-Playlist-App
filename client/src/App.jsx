@@ -13,7 +13,6 @@ import { useState, useEffect } from "react"
 
 function App() {
   const [user, setUser] = useState(null)
-  const [toggleFetch, setToggleFetch] = useState(false)
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -21,7 +20,7 @@ function App() {
       user ? setUser(user) : setUser(null)
     }
     fetchUser()
-  }, [user], [toggleFetch])
+  }, [user])
 
   const clearUser = () => setUser(null)
   return (

@@ -1,7 +1,7 @@
 .playlist-song {
   display: flex;
   box-shadow: 0 1px 0 grey;
-  height:35px;
+  height:39px;
   align-items: center;
   padding: 0 5px 0 5px;
 }
@@ -34,4 +34,10 @@
   color: #73d499;
   font-size: 15px;
   width: 4%;
+  font-weight: bold;
+}
+
+.playlist-song-delete:hover {
+  transform: scale(1.20);
+  color: red;
 }
