@@ -49,61 +49,75 @@ const SignUp = (props) => {
         const toggleForm = form.isError ? 'danger' : ''
         if (form.isError) {
             return (
-                <button type="submit" className={toggleForm}>
+                <button className="sign-up-button" type="submit" className={toggleForm}>
                     {form.errorMsg}
                 </button>
             )
         } else {
-            return <button type="submit">Sign Up</button>
+            return <button className="sign-up-button" type="submit">Sign Up</button>
         }
     }
 
     const { email, username, password, passwordConfirmation } = form
 
   return (
-      <Layout>
-        <div className="form-container">
-            <h3>Sign Up</h3>
-            <form onSubmit={onSignUp}>
-                <label>Username</label>
-                <input
+    <Layout>
+      <div className="sign-up-body">
+        <div className="form-container-up">
+            <div className="sign-up">Sign Up</div>
+          <form className="sign-up-form" onSubmit={onSignUp}>
+                <div className="username-div">
+                <label className="label">Username</label>
+            <input
+                    className="username"
                     required
                     type="text"
                     name="username"
                     value={username}
                     placeholder="Enter username"
                     onChange={handleChange}
-                />
-                <label>Email address</label>
-                <input
+              />
+            </div>
+                <div className="email-div">
+                <label className="label">Email</label>
+            <input
+                    className="email"
                     required
                     type="email"
                     name="email"
                     value={email}
                     placeholder="Enter email"
                     onChange={handleChange}
-                />
-                <label>Password</label>
-                <input
+              />
+            </div>
+            <div className="password-div">
+                <label className="label">Password</label>
+            <input
+                    className="password"
                     required
                     name="password"
                     value={password}
                     type="password"
                     placeholder="Password"
                     onChange={handleChange}
-                />
-                <label>Password Confirmation</label>
-                <input
+              />
+            </div>
+            <div className="password-confirmation-div">
+                <label className="label">Confirm Password</label>
+            <input
+                    className="password-confirmation"
                     required
                     name="passwordConfirmation"
                     value={passwordConfirmation}
                     type="password"
                     placeholder="Confirm Password"
                     onChange={handleChange}
-                />
+              />
+              </div>
                 {renderError()}
             </form>
-      </div>
+        </div>
+        </div>
       </Layout>
     )
 }

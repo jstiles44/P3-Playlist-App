@@ -20,7 +20,7 @@ function App() {
       user ? setUser(user) : setUser(null)
     }
     fetchUser()
-  }, [user])
+  }, [])
 
   const clearUser = () => setUser(null)
   return (
