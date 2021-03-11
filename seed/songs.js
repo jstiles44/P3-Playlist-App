@@ -65,7 +65,7 @@ const main = async () => {
         "artist": "Bill Withers",
         "releaseYear": "1972",
         "genre": "Soul",
-        "albumCover": "https://en.wikipedia.org/wiki/Use_Me_(Bill_Withers_song)#/media/File:Use_Me_-_Bill_Withers.jpg",
+        "albumCover": "https://imgur.com/OuxUVZR",
         "album": "Still Bill",
         "songLength": "3:45",
       },
