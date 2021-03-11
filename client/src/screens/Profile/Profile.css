@@ -1,0 +1,119 @@
+.profile-container {
+background-color: #454851;
+width: 100vw;
+display: grid;
+grid-template-areas: 
+"P P F F" 
+"P P A A";
+}
+
+.playlist-container {
+
+  grid-area: P;
+  background-color: #33353C;
+  height: 650px;
+  overflow: scroll;
+  margin:50px 25px 50px 75px;
+  width: 50vw;
+  box-shadow:  0 0 5px black;
+}
+
+.favorites-profile {
+  grid-area: F;
+  background-color: #33353C;
+  margin:50px 75px 0 25px;
+  width: 38vw;
+  height: 300px;
+  box-shadow:  0 0 5px black;
+}
+
+.analytics-profile {
+  grid-area: A;
+  background-color: #33353C;
+  margin:50px 75px 50px 25px;
+  width: 38vw;
+  height: 300px;
+  box-shadow:  0 0 5px black;
+}
+
+.loading-container {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlist-labels {
+  display: flex;
+  height: 40px;
+  border-bottom: 1px solid lightgrey;
+  align-items: flex-end;
+  padding: 0 5px 5px 5px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #33353C;
+}
+
+.playlist-label-title {
+  width: 40%;
+  color: white;
+  font-size: 15px;
+}
+.playlist-label-artist {
+  width: 30%;
+  color: white;
+  font-size: 15px;
+}
+
+.playlist-label-time {
+  color: white;
+  font-size: 15px;
+  width: 12%;
+}
+
+.playlist-label-rating {
+  color: white;
+  font-size: 15px;
+  width: 10%;
+}
+
+.playlist-label-delete {
+  color: white;
+  font-size: 15px;
+  width: 8%;
+}
+
+
+.favorites-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 300px;
+}
+
+
+
+
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #54D986;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
