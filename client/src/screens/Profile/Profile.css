@@ -13,7 +13,7 @@ grid-template-areas:
   background-color: #33353C;
   height: 650px;
   overflow: scroll;
-  margin:50px 25px 50px 100px;
+  margin:50px 25px 50px 75px;
   width: 50vw;
   box-shadow:  0 0 5px black;
 }
@@ -21,15 +21,19 @@ grid-template-areas:
 .favorites-profile {
   grid-area: F;
   background-color: #33353C;
-  margin:50px 100px 50px 25px;
-  width: 35vw;
+  margin:50px 75px 0 25px;
+  width: 38vw;
+  height: 300px;
+  box-shadow:  0 0 5px black;
 }
 
 .analytics-profile {
   grid-area: A;
   background-color: #33353C;
-  margin:50px 100px 50px 25px;
-  width: 35vw;
+  margin:50px 75px 50px 25px;
+  width: 38vw;
+  height: 300px;
+  box-shadow:  0 0 5px black;
 }
 
 .loading-container {
@@ -78,6 +82,13 @@ grid-template-areas:
   width: 8%;
 }
 
+
+.favorites-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 300px;
+}
 
 
 

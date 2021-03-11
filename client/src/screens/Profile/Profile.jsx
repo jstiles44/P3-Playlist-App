@@ -2,6 +2,7 @@ import Layout from "../../components/Shared/layout/Layout";
 import SongPlaylist from "../../components/playlist/SongPlaylist";
 import { useState, useEffect } from "react";
 import "./Profile.css";
+import Favorites from "../../components/playlist/Favorites"
 
 const Profile = (props) => {
   const [loading, setLoading] = useState(true);
@@ -19,6 +20,13 @@ const Profile = (props) => {
       title={song.title}
       artist={song.artist}
       songLength={song.songLength}
+    />
+  ));
+
+  const playlistFavoritesJSX = playlist.slice(0, 3).map((song) => (
+    <Favorites
+      title={song.title}
+      albumCover={song.albumCover}
     />
   ));
 
@@ -48,8 +56,8 @@ const Profile = (props) => {
               <div className="loader"></div>
             </div>
           ) : (
-            <div>test</div>
-          )}{" "}
+            <div className="favorites-box">{playlistFavoritesJSX}</div>
+          )}
         </div>
         <div className="analytics-profile">
           {loading ? (
