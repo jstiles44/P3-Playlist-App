@@ -1,10 +1,11 @@
 .sign-up-body{
-  height: 82vh;
+  height: 764px;
   background-color: #454851;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Lato", sans-serif;
 }
 
 .form-container-up {
@@ -24,6 +25,7 @@
   font-size: x-large;
   position: relative;
   top: -5px;
+  
 }
 
 .sign-up-form{
@@ -51,11 +53,35 @@
   top: -5px;
 }
 
+.sign_up_button_slide{
+  width: 100px;
+  height: 20px;
+  grid-area: B;
+  height: 50px;
+  color: black;
+  background-color: #73d499;;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
+  transition: ease-out 0.5s;
+}
+
+.sign_up_slide_right:hover {
+  box-shadow: inset 100px 0 0 0 #ffffff;
+}
+
+
 .email-div{
   margin-bottom: 10px;
   position: relative;
   top: -5px;
-  right: 20px;
+  right: 23.5px;
 }
 
 .password-confirmation-div{
@@ -63,4 +89,18 @@
   position: relative;
   top: -5px;
   right: 60px;
+}
+
+.sign-up-username-div{
+  margin-bottom: 10px;
+  position: relative;
+  top: -5px;
+  right: 37px;
+}
+
+.sign-up-password-div{
+  margin-bottom: 10px;
+  position: relative;
+  top: -5px;
+  right: 37.5px;
 }

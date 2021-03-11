@@ -49,12 +49,12 @@ const SignUp = (props) => {
         const toggleForm = form.isError ? 'danger' : ''
         if (form.isError) {
             return (
-                <button className="sign-up-button" type="submit" className={toggleForm}>
+                <button className="sign_up_button_slide sign_up_slide_right" type="submit" className={toggleForm}>
                     {form.errorMsg}
                 </button>
             )
         } else {
-            return <button className="sign-up-button" type="submit">Sign Up</button>
+            return <button className="sign_up_button_slide sign_up_slide_right" type="submit">Sign Up</button>
         }
     }
 
@@ -66,7 +66,7 @@ const SignUp = (props) => {
         <div className="form-container-up">
             <div className="sign-up">Sign Up</div>
           <form className="sign-up-form" onSubmit={onSignUp}>
-                <div className="username-div">
+                <div className="sign-up-username-div">
                 <label className="label">Username</label>
             <input
                     className="username"
@@ -90,7 +90,7 @@ const SignUp = (props) => {
                     onChange={handleChange}
               />
             </div>
-            <div className="password-div">
+            <div className="sign-up-password-div">
                 <label className="label">Password</label>
             <input
                     className="password"

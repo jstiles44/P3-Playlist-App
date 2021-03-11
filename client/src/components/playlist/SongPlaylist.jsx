@@ -5,8 +5,10 @@ import {deleteSong} from "../../services/users"
 const SongPlaylist = (props) => {
 
   const deleteFromPlaylist = async () => {
+    console.log(props.userId, props.songId)
       const response = await deleteSong(props.userId, props.songId);
-      props.setUser(response);
+    props.setUser(response);
+   
   }
   return (
     <div className="playlist-song">

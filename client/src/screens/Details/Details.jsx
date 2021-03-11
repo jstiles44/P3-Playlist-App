@@ -66,8 +66,10 @@ const Details = (props) => {
             <div className="release-year">Release Year: {song.releaseYear}</div>
             <div className="song-length">Length: {song.songLength}</div>
           </div>
+          <div className='button-container'>
           {props.user ? authenticatedOptions : unauthenticatedOptions}
-        </div>
+          </div>
+          </div>
       </div>
     </Layout>
   );

@@ -10,7 +10,7 @@ grid-template-areas:
 .playlist-container {
   grid-area: P;
   background-color: #33353C;
-  height: 650px;
+  height: 664px;
   /* overflow: scroll; */
   overflow-x: hidden;
   margin:50px 25px 50px 75px;
