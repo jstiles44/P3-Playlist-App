@@ -8,6 +8,6 @@ router.post('/sign-in', controllers.signIn)
 router.get('/verify', controllers.verify)
 router.post('/change-password', controllers.changePassword)
 router.patch('/:id/songs', controllers.addSong)
-router.delete('/:id/songs', controllers.deleteSong)
+router.patch('/:id/playlist', controllers.deleteSong)
 
 module.exports = router
