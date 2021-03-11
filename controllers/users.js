@@ -90,11 +90,34 @@ const addSong = async (req, res) => {
     res.status(500).json({ error: error.message })
   }
 }
+
+const deleteSong = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+
+    const song = await Song.findById(req.body._id)
+
+    user.playlist.findByIdAndDelete(song)
+    
+    await user.save()
+    const userPayload = { 
+      username: user.username,
+      email: user.email,
+      playlist: user.playlist,
+      id: user._id
+    }
+    console.log(userPayload)
+    res.json(userPayload)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
   
   module.exports = {
     signUp,
     signIn,
     verify,
     changePassword,
-    addSong
+    addSong,
+    deleteSong
 }
