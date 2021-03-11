@@ -1,0 +1,23 @@
+.profile-container {
+background-color: #454851;
+width: 100vw;
+display: grid;
+grid-template-areas: 
+"P P F F" 
+"P P A A";
+}
+
+.playlist-container {
+  grid-area: P;
+  border: solid white 2px;
+}
+
+.favorites-profile {
+  grid-area: F;
+  border: solid white 2px;
+}
+
+.analytics-profile {
+  grid-area: A;
+  border: solid white 2px;
+}

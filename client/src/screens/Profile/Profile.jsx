@@ -1,5 +1,6 @@
 import Layout from "../../components/Shared/layout/Layout";
 import SongPlaylist from "../../components/playlist/SongPlaylist";
+import "./Profile.css";
 
 const Profile = (props) => {
   const { playlist } = props.user;
@@ -14,8 +15,19 @@ const Profile = (props) => {
 
   return (
     <Layout user={props.user}>
-      <div>hi {props.user.username}</div>
-      <div>{playlistSongsJSX}</div>
+      <div className="profile-container">
+
+        <div className="playlist-container">
+          <div className="playlist-labels">
+            Title: Artist: ⏱ Rating: Delete:
+          </div>
+
+          {playlistSongsJSX}
+        </div>
+
+        <div className="favorites-profile">test</div>
+        <div className="analytics-profile">test</div>
+      </div>
     </Layout>
   );
 };
