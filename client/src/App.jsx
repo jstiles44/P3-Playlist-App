@@ -6,6 +6,7 @@ import Profile from "./screens/Profile/Profile"
 import SignIn from "./screens/SignIn/SignIn"
 import SignUp from "./screens/SignUp/SignUp"
 import SignOut from "./screens/SignOut/SignOut"
+import { verifyUser } from './services/users'
 import { Route, Switch, Redirect } from "react-router-dom"
 import { useState, useEffect } from "react"
 
@@ -29,19 +30,19 @@ function App() {
           <Home user={user} />
         </Route>
         <Route exact path="/sign-up">
-          <SignUp user={user} />
+          <SignUp setUser={setUser}/>
         </Route>
         <Route exact path="/sign-in">
-          <SignIn user={user} />
+          <SignIn setUser={setUser} />
         </Route>
         <Route exact path="/sign-out">
-          <SignOut user={user} />
+          <SignOut setUser={setUser} clearUser={clearUser} />
         </Route>
         <Route exact path="/explore">
           <Explore user={user} />
         </Route>
         <Route exact path="/explore/:id">
-          <Details user={user} />
+          <Details user={user} setUser={setUser}/>
         </Route>
         <Route exact path="/profile">
           <Profile user={user} />

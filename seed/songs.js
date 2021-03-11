@@ -60,6 +60,17 @@ const main = async () => {
         "album": "Mezzanine",
         "songLength": "5:57",
       },
+      {
+        "title": "Use Me",
+        "artist": "Bill Withers",
+        "releaseYear": "1972",
+        "genre": "Soul",
+        "albumCover": "https://imgur.com/OuxUVZR",
+        "album": "Still Bill",
+        "songLength": "3:45",
+      },
+    
+      
      
     ]
   await Song.insertMany(songs)

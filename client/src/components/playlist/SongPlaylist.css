@@ -1,0 +1,46 @@
+.playlist-song {
+  display: flex;
+  box-shadow: 0 1px 0 grey;
+  height:39px;
+  align-items: center;
+  padding: 0 5px 0 5px;
+}
+
+.playlist-song-title {
+  width: 40%;
+  color: white;
+  font-size: 15px;
+}
+
+.playlist-song-artist {
+  width: 30%;
+  color: white;
+  font-size: 15px;
+} 
+
+.playlist-song-length {
+  color: white;
+  font-size: 15px;
+  width: 12%;
+}
+
+.playlist-song-rating {
+  color: white;
+  font-size: 15px;
+  width: 11%;
+}
+
+.playlist-song-delete {
+  color: #73d499;
+  font-size: 15px;
+  width: 4%;
+  font-weight: bold;
+  text-align: center;
+  transition: .5s;
+}
+
+.playlist-song-delete:hover {
+  transform: scale(1.50);
+  color: red;
+  transition: .5s;
+}

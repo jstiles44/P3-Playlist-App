@@ -48,3 +48,13 @@ export const verifyUser = async () => {
   }
   return false
 }
+
+
+export const addSong = async (id, song) => {
+  try {
+    const response = await api.patch(`/${id}/songs`, song)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}

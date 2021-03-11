@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const User = require('../models/user')
 const db = require('../db/connection')
+const Song = require('../models/song')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -15,8 +16,7 @@ const signUp = async (req, res) => {
     const user = new User({
       username,
       email,
-      password_digest,
-      playlist
+      password_digest
     })
     
     await user.save()
@@ -40,7 +40,9 @@ const signIn = async (req, res) => {
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
         username: user.username,
-        email: user.email
+        email: user.email,
+        playlist: user.playlist,
+        id: user._id
       }
 
       const token = jwt.sign(payload, TOKEN_KEY)
@@ -66,10 +68,33 @@ const signIn = async (req, res) => {
   }
 
 const changePassword = async (req, res) => { }
+
+
+
+const addSong = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    console.log(req.body._id)
+    const song = await Song.findById(req.body._id)
+    user.playlist.push(song)
+    console.log(user)
+    await user.save()
+    const userPayload = { 
+      username: user.username,
+      email: user.email,
+      playlist: user.playlist,
+      id: user._id
+  }
+    res.json(userPayload)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
   
   module.exports = {
     signUp,
     signIn,
     verify,
-    changePassword
+    changePassword,
+    addSong
 }
