@@ -1,1 +1,5 @@
-
+.home-body{
+  display: flex;
+  height: 45vw;
+  background-color: #454851;
+}

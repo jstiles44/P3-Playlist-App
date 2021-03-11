@@ -4,9 +4,18 @@ import './songCarousel.css'
 
 const SongCarousel = (props) => {
   return (
-      <Carousel autoPlay={true} interval='3000' infiniteLoop transitionTime='500' showThumbs={false} className='recently-added'>
+    <div className='recently-added'>
+      <h2>Recently Added</h2>
+    <Carousel autoPlay={true}
+      interval='3000'
+      infiniteLoop
+      transitionTime='500'
+      showThumbs={false}
+        showStatus={false}
+        showIndicators={false}
+      >
         {props.recentlyAdded.map((song, index) => (
-          <div style={{height: '300px', width: '300px'}} key={index}>
+          <div style={{height: '100%', width: '300px'}} key={index}>
             <img src={song.albumCover} alt={song.album}
               className='album-art' />
             <div className='album-title'>{song.title}</div>
@@ -14,6 +23,7 @@ const SongCarousel = (props) => {
           </div>
         ))}
       </Carousel>
+      </div>
   );
 };
 
