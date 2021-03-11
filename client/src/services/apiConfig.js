@@ -15,6 +15,7 @@ const api = axios.create({
 //this is for injecting properties into our axios request before they are sent out
 api.interceptors.request.use(async function (options) {
   // we're going to inject the bearer token from the getToken promsie we created.
+  options.headers['Authorization'] = await getToken()
   return options
 }, function (error) {
   console.log('request error:', error)
