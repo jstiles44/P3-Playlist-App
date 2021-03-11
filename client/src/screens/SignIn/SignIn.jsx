@@ -47,24 +47,28 @@ const SignIn = (props) => {
       const toggleForm = form.isError ? 'danger' : ''
       if (form.isError) {
           return (
-              <button type="submit" className={toggleForm}>
+              <button className="sign-in-button" type="submit" className={toggleForm}>
                   {form.errorMsg}
               </button>
           )
       } else {
-          return <button type="submit">Sign In</button>
+          return <button className="sign-in-button" type="submit">Sign In</button>
       }
   }
 
   const { username, password } = form
 
   return (
+   
     <Layout user={props.user}>
+       <div className="sign-in-body">
       <div className="form-container">
-          <h3>Sign In</h3>
-          <form onSubmit={onSignIn}>
-              <label>Username</label>
-              <input
+          <div className="sign-in">Sign In</div>
+          <form className="sign-in-form" onSubmit={onSignIn}>
+            <div className="username-div">
+              <label className="label">Username</label>
+            <input
+                  className="username"
                   required
                   type="text"
                   name="username"
@@ -72,8 +76,11 @@ const SignIn = (props) => {
                   placeholder="Enter Username"
                   onChange={handleChange}
               />
-              <label>Password</label>
-              <input
+            </div>
+            <div className="password-div">
+              <label className="label">Password</label>
+            <input
+                  className="password"
                   required
                   name="password"
                   value={password}
@@ -81,10 +88,13 @@ const SignIn = (props) => {
                   placeholder="Password"
                   onChange={handleChange}
               />
+              </div>
               {renderError()}
           </form>
       </div>
-    </Layout>
+      </div>
+      </Layout>
+     
   )
 }
 
