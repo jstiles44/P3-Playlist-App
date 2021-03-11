@@ -61,6 +61,8 @@
   font-size: 20px;
 }
 
+
+/* based on https://codepen.io/RazorXio/pen/gMaoOW */
 .button_slide {
   grid-area: B;
   height: 50px;
@@ -77,9 +79,17 @@
   -webkit-transition: ease-out 0.5s;
   -moz-transition: ease-out 0.5s;
   transition: ease-out 0.5s;
+  margin-top: 85px
 }
 
 .slide_right:hover {
   box-shadow: inset 400px 0 0 0 #ffffff;
   /* transition: .5s; */
+}
+
+
+.login_to_edit{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
