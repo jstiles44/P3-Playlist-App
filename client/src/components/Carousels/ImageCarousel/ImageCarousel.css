@@ -1,8 +1,29 @@
+.image-container{
+  display:flex;
+  flex-direction: column;
+  width: 20vw;
+  padding-top: 60px;
+  padding-left: 20vw;
+}
+
+.tagline{
+  align-self: flex-start;
+  font-size: 30px;
+  color: #ffffff;
+  width: 100%;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
 .images {
   display: inline-flex;
   width: 30vw;
   padding-left: 50px;
-  align-self: flex-start;
-  padding-top: 100px;
-  padding-left: 80px;
+  justify-content: center;
+  border-radius: 20px;
+  padding-top: 10px;
+}
+
+.slide img{
+  border-radius: 20px;
 }
