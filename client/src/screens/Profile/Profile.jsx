@@ -1,11 +1,13 @@
 import Layout from "../../components/Shared/layout/Layout";
 import SongPlaylist from "../../components/playlist/SongPlaylist";
+import SongPlayer from "../../components/songPlayer/SongPlayer";
 import { useState, useEffect } from "react";
 import "./Profile.css";
-import Favorites from "../../components/playlist/Favorites"
+import Favorites from "../../components/playlist/Favorites";
 
 const Profile = (props) => {
   const [loading, setLoading] = useState(true);
+  const [songToPlay, setSongToPlay] = useState('test');
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,8 +25,22 @@ const Profile = (props) => {
       songId={song._id}
       userId={props.user.id}
       setUser={props.setUser}
+      songLink={song.songLink}
+      setSongToPlay={setSongToPlay}
     />
   ));
+
+  // const songPlayerJSX = playlist.map((song) => (
+  //   <div>
+  //     <SongPlayer songLink={song.songLink} />
+  //   </div>
+  // ));
+
+  const songPlayerJSX = (
+    <div>
+      <SongPlayer songToPlay={songToPlay}/>
+    </div>
+  );
 
   const playlistFavoritesJSX = playlist.slice(0, 3).map((song) => (
     <Favorites
@@ -45,7 +61,6 @@ const Profile = (props) => {
             <div className="playlist-label-rating">Rating</div>
             <div className="playlist-label-delete">Delete</div>
             <div className="playlist-label-play">Play</div>
-
           </div>
           {loading ? (
             <div className="loading-container">
@@ -75,15 +90,15 @@ const Profile = (props) => {
             <div>test</div>
           )}
         </div> */}
-         <div className="player-window">
+        <div className="player-window">
           {loading ? (
             <div className="loading-container">
               <div className="loader"></div>
             </div>
           ) : (
-              <div>
-                <iframe className="profile-player" width="358.72" height="300" src="https://www.youtube.com/embed/2N9fOZuI0gQ" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+              <div className="songPlayer">
+                {songPlayerJSX}
+              </div>
           )}
         </div>
       </div>

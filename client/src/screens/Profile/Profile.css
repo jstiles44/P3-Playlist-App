@@ -51,13 +51,13 @@ grid-template-areas:
   border-radius: 20px;
 }
 
-.profile-player{
+/* .profile-player{
   border-radius: 20px;
   overflow: hidden;
   z-index: 1;
   width: 38vw;
   height: 300px;
-}
+} */
 
 .loading-container {
   height: 90%;
@@ -131,7 +131,6 @@ grid-template-areas:
   margin-bottom: 0px;
   font-family: "Lato", sans-serif;
 }
-
 
 
 
