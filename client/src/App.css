@@ -1,0 +1,19 @@
+.main-loading-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #33353C;
+}
+
+.loading-logo {
+  font-size: 50px;
+  display: flex;
+  padding-left: 30px;
+  padding-top: 15px;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 400;
+  color: #73D499;
+  margin-bottom: 300px;
+}
