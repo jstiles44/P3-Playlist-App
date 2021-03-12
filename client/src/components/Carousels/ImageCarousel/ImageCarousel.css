@@ -1,9 +1,10 @@
 .image-container{
   display:flex;
   flex-direction: column;
-  width: 20vw;
+  /* width: 20vw;
   padding-top: 60px;
-  padding-left: 20vw;
+  padding-left: 20vw; */
+  width: 600px;
 }
 
 .tagline{
@@ -16,14 +17,19 @@
 }
 
 .images {
+  overflow: hidden;
   display: inline-flex;
-  width: 30vw;
-  padding-left: 50px;
-  justify-content: center;
+  height: 400px;
+  width: 600px;
+  object-fit: cover;
+  /* width: 30vw; */
+  /* padding-left: 50px; */
+  align-items: center;
   border-radius: 20px;
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 
 .slide img{
   border-radius: 20px;
+
 }

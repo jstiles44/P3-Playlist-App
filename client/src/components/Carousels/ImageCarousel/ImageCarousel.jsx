@@ -6,11 +6,11 @@ const ImageCarousel = () => {
   return (
     <>
       <div className='image-container'>
-        <div className='tagline'> Create A Playlist That Matches Your Personality!</div>
+        {/* <div className='tagline'> Create A Playlist That Matches Your Personality!</div> */}
     <Carousel autoPlay={true}
-     interval='3000'
+     interval='5000'
       infiniteLoop
-      transitionTime='700'
+      transitionTime='1000'
       showThumbs={false}
       showStatus={false}
       showIndicators={false}

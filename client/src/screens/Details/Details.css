@@ -98,3 +98,12 @@
   display: flex;
   justify-content: center;
 }
+
+.audio{
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+  height: 400px;
+  width: 400px;
+  margin: 10px;
+}

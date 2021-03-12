@@ -44,6 +44,8 @@ const Profile = (props) => {
             <div className="playlist-label-time">⏱</div>{" "}
             <div className="playlist-label-rating">Rating</div>
             <div className="playlist-label-delete">Delete</div>
+            <div className="playlist-label-play">Play</div>
+
           </div>
           {loading ? (
             <div className="loading-container">
@@ -64,13 +66,24 @@ const Profile = (props) => {
             <div className="favorites-box">{playlistFavoritesJSX}</div>
           )}
         </div>
-        <div className="analytics-profile">
+        {/* <div className="analytics-profile">
           {loading ? (
             <div className="loading-container">
               <div className="loader"></div>
             </div>
           ) : (
             <div>test</div>
+          )}
+        </div> */}
+         <div className="player-window">
+          {loading ? (
+            <div className="loading-container">
+              <div className="loader"></div>
+            </div>
+          ) : (
+              <div>
+                <iframe className="profile-player" width="358.72" height="300" src="https://www.youtube.com/embed/2N9fOZuI0gQ" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
           )}
         </div>
       </div>

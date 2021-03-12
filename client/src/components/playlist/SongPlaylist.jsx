@@ -8,7 +8,6 @@ const SongPlaylist = (props) => {
     console.log(props.userId, props.songId)
       const response = await deleteSong(props.userId, props.songId);
     props.setUser(response);
-   
   }
   return (
     <div className="playlist-song">
@@ -17,6 +16,7 @@ const SongPlaylist = (props) => {
       <div className="playlist-song-length">{props.songLength}</div>
       <div className="playlist-song-rating">rating</div>
       <div className="playlist-song-delete" onClick={deleteFromPlaylist}>X</div> 
+      <div className="playlist-song-play">▶</div> 
     </div>
   )
 }

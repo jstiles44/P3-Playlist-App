@@ -10,6 +10,7 @@ const Song = new Schema(
     albumCover: { type: String, required: true },
     album: {type: String, required: true},
     songLength: { type: String, required: true },
+    songLink: {type: String, required: true},
     // userIds: [{ type: Schema.Types.ObjectId, ref: 'users' }]
     // rating: {rating: Number, userId: String}
     // ratings: [{ rating: Number, songId: { type: Schema.Types.ObjectId, ref: 'songs' } }] (will be added post mvp)
