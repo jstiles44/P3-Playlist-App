@@ -12,10 +12,10 @@ const main = async () => {
         "releaseYear": "1968",
         "genre": "Classic Rock",
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
-        "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Electric Ladyland",
         "songLength": "4:01",
-        "songLink":"https://www.youtube.com/watch?v=TLV4_xaYynY"
+        "songLink": "TLV4_xaYynY"
+
         },
         {
         "title": "Levels",
@@ -25,7 +25,7 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Levels Single",
           "songLength": "5:39",
-          "songLink":"https://www.youtube.com/watch?v=TLV4_xaYynY"
+          "songLink":"TLV4_xaYynY"
         },
         {
         "title": "Cigarette Daydreams",
@@ -35,19 +35,17 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Melophobia",
           "songLength": "3:29",
-          "songLink":"https://www.youtube.com/watch?v=TLV4_xaYynY"
+          "songLink":"TLV4_xaYynY"
       },
       {
         "title": "Decks Dark",
         "artist": "Radiohead",
         "releaseYear": "2016",
         "genre": "Alternative",
-
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
-
         "album": "A Moon Shaped Pool",
         "songLength": "4:41",
-        "songLink":"https://www.youtube.com/watch?v=Del3C2W63Pk"
+        "songLink":"Del3C2W63Pk"
         },
     {
         "title": "Ghost Ship",
@@ -55,10 +53,9 @@ const main = async () => {
         "releaseYear": "2015",
         "genre": "Alternative",
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
-
         "album": "The Magic Whip",
       "songLength": "4:59",
-      "songLink":"https://www.youtube.com/watch?v=TLV4_xaYynY"
+      "songLink":"TLV4_xaYynY"
         },
     {
         "title": "Inertia Creeps",
@@ -68,7 +65,7 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Mezzanine",
       "songLength": "5:57",
-        "songLink":"https://www.youtube.com/watch?v=TLV4_xaYynY"
+        "songLink":"TLV4_xaYynY"
       },
       {
         "title": "Use Me",
@@ -78,7 +75,7 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Still Bill",
         "songLength": "3:45",
-        "songLink":"https://www.youtube.com/watch?v=TLV4_xaYynY"
+        "songLink":"TLV4_xaYynY"
       },
     ]
   await Song.insertMany(songs)
