@@ -35,7 +35,7 @@ const Nav = ({ user }) => {
   return (
     <nav>
       <div className="nav">
-        <NavLink className="logo" to="/">SongsU</NavLink>
+        <NavLink className="logo" to="/">SongsYOÜ</NavLink>
           {alwaysOptions}
           {user ? authenticatedOptions : unauthenticatedOptions}
       </div>

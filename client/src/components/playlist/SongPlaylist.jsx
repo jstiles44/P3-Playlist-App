@@ -1,5 +1,5 @@
 import "./SongPlaylist.css"
-import {deleteSong} from "../../services/users"
+import { deleteSong } from "../../services/users"
 
 
 const SongPlaylist = (props) => {
@@ -9,6 +9,12 @@ const SongPlaylist = (props) => {
       const response = await deleteSong(props.userId, props.songId);
     props.setUser(response);
   }
+
+  const play = () => {
+    console.log(props.songLink)
+    props.setSongToPlay(props.songLink)
+  }
+  
   return (
     <div className="playlist-song">
       <div className="playlist-song-title">{props.title}</div>
@@ -16,7 +22,7 @@ const SongPlaylist = (props) => {
       <div className="playlist-song-length">{props.songLength}</div>
       <div className="playlist-song-rating">rating</div>
       <div className="playlist-song-delete" onClick={deleteFromPlaylist}>X</div> 
-      <div className="playlist-song-play">▶</div> 
+      <div className="playlist-song-play" onClick={play}>▶</div> 
     </div>
   )
 }

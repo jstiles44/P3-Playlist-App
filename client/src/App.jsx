@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       {loading ? (<div className="main-loading-container">
-              <div className="loading-logo">SongsU</div>
+              <div className="loading-logo">SongsYOÜ</div>
             </div>) :
         <Switch>
           <Route exact path="/">

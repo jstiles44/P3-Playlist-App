@@ -7,13 +7,13 @@
 }
 
 .playlist-song-title {
-  width: 40%;
+  width: 36%;
   color: white;
   font-size: 15px;
 }
 
 .playlist-song-artist {
-  width: 30%;
+  width: 28%;
   color: white;
   font-size: 15px;
 } 
@@ -27,13 +27,13 @@
 .playlist-song-rating {
   color: white;
   font-size: 15px;
-  width: 11%;
+  width: 8%;
 }
 
 .playlist-song-delete {
   color: #73d499;
   font-size: 15px;
-  width: 4%;
+  width: 7%;
   font-weight: bold;
   text-align: center;
   transition: .5s;
@@ -48,7 +48,7 @@
 .playlist-song-play {
   color: #73d499;
   font-size: 15px;
-  width: 4%;
+  width: 6%;
   font-weight: bold;
   text-align: center;
   transition: .5s;
