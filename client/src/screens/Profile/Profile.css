@@ -10,7 +10,7 @@ grid-template-areas:
 .playlist-container {
   grid-area: P;
   background-color: #33353C;
-  height: 664px;
+  height: 650px;
   /* overflow: scroll; */
   overflow-x: hidden;
   margin:50px 25px 50px 75px;
@@ -22,7 +22,7 @@ grid-template-areas:
 .favorites-profile {
   grid-area: F;
   background-color: #33353C;
-  margin:50px 75px 0 25px;
+  margin:50px 50px 0 25px;
   width: 38vw;
   height: 300px;
   box-shadow:  0 0 5px black;
@@ -33,7 +33,7 @@ grid-template-areas:
 .analytics-profile {
   grid-area: A;
   background-color: #33353C;
-  margin:50px 75px 50px 25px;
+  margin:50px 25px 50px 25px;
   width: 38vw;
   height: 300px;
   box-shadow:  0 0 5px black;
@@ -102,7 +102,7 @@ grid-template-areas:
   color: white;
   font-size: 20px;
   margin-top: 5px;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-bottom: 0px;
   font-family: "Lato", sans-serif;
 

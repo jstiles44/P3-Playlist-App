@@ -77,9 +77,6 @@ const main = async () => {
         "album": "Still Bill",
         "songLength": "3:45",
       },
-    
-      
-     
     ]
   await Song.insertMany(songs)
   console.log('Created songs!')

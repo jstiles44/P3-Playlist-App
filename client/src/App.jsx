@@ -32,8 +32,8 @@ function App() {
   const clearUser = () => setUser(null)
   return (
     <div className="App">
-      {loading ? (<div className="loading-container">
-              <div className="loader"></div>
+      {loading ? (<div className="main-loading-container">
+              <div className="loading-logo">SongsU</div>
             </div>) :
         <Switch>
           <Route exact path="/">

@@ -10,7 +10,7 @@ const Profile = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
 
   const { playlist } = props.user;
