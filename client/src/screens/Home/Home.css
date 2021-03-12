@@ -1,6 +1,26 @@
 .home-body{
+  height: 764px;
   display: flex;
-  height: 45vw;
+  /* height: 45vw; */
   background-color: #454851;
   padding-top: 20px;
+}
+
+.home-carousels{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-carousel-left{
+  margin: 10px;
+  box-shadow: 0 0 3px black;
+  border-radius: 20px;
+}
+
+.home-carousel-right{
+  margin: 10px;
+  box-shadow: 0 0 3px black;
+  border-radius: 20px;
 }
