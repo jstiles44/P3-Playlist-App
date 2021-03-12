@@ -13,6 +13,7 @@ import { useState, useEffect } from "react"
 
 function App() {
   const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -22,32 +23,42 @@ function App() {
     fetchUser()
   }, [])
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
+  })
+
   const clearUser = () => setUser(null)
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/">
-          <Home user={user} />
-        </Route>
-        <Route exact path="/sign-up">
-          <SignUp setUser={setUser}/>
-        </Route>
-        <Route exact path="/sign-in">
-          <SignIn setUser={setUser} />
-        </Route>
-        <Route exact path="/sign-out">
-          <SignOut setUser={setUser} clearUser={clearUser} />
-        </Route>
-        <Route exact path="/explore">
-          <Explore user={user} />
-        </Route>
-        <Route exact path="/explore/:id">
-          <Details user={user} setUser={setUser}/>
-        </Route>
-        <Route exact path="/profile">
-          <Profile user={user} />
-        </Route>
-      </Switch>
+      {loading ? (<div className="main-loading-container">
+              <div className="loading-logo">SongsU</div>
+            </div>) :
+        <Switch>
+          <Route exact path="/">
+            <Home user={user} />
+          </Route>
+          <Route exact path="/sign-up">
+            <SignUp setUser={setUser} />
+          </Route>
+          <Route exact path="/sign-in">
+            <SignIn setUser={setUser} />
+          </Route>
+          <Route exact path="/sign-out">
+            <SignOut setUser={setUser} clearUser={clearUser} />
+          </Route>
+          <Route exact path="/explore">
+            <Explore user={user} />
+          </Route>
+          <Route exact path="/explore/:id">
+            <Details user={user} setUser={setUser} />
+          </Route>
+          <Route exact path="/profile">
+            <Profile user={user} setUser={setUser}/>
+          </Route>
+        </Switch>
+      }
     </div>
   );
 }

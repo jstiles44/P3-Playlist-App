@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { getSongs } from '../../services/songs.js';
-import { Carousel } from 'react-responsive-carousel';
-import Layout from '../../components/Shared/layout/Layout.jsx'
+import Layout from '../../components/Shared/layout/Layout.jsx';
+import SongCarousel from "../../components/Carousels/songCarousel/songCarousel.jsx";
+import ImageCarousel from "../../components/Carousels/ImageCarousel/ImageCarousel.jsx";
+import './Home.css'
 
 const Home = (props) => {
 
@@ -14,24 +16,23 @@ const Home = (props) => {
       const songs = await getSongs();
       setSongs(songs);
       // recently added songs are the first 5 songs that will be at the top of the array.
-      setRecentlyAdded(songs.splice(0, 5))
+      const recentlyAdded = songs.splice(0, 5);
+      setRecentlyAdded(recentlyAdded);
     }
     fetchSongs()
   }, []);
-  
-  
+
+
   return (
     <Layout user={props.user}>
-      <Carousel className='recently-added'>
-        {recentlyAdded.map((song, index) => (
-          <div key={index}>
-            <img src={song.albumCover} alt={song.album}
-              className='album-art' />
-            <div className='album-title'>{song.title}</div>
-            <div className='artist'>{song.artist}</div>
-          </div>
-        ))}
-      </Carousel>
+      <div className='home-body'>
+
+      <SongCarousel recentlyAdded={recentlyAdded}/>
+
+      <ImageCarousel />
+        
+      </div>
+
       </Layout>
   );
 };

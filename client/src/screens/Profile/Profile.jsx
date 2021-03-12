@@ -10,7 +10,7 @@ const Profile = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
 
   const { playlist } = props.user;
@@ -20,6 +20,9 @@ const Profile = (props) => {
       title={song.title}
       artist={song.artist}
       songLength={song.songLength}
+      songId={song._id}
+      userId={props.user.id}
+      setUser={props.setUser}
     />
   ));
 

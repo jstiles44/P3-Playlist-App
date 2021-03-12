@@ -61,6 +61,19 @@ const deleteSong = async (req, res) => {
     res.status(500).json({ error: error.message })
   }
 }
+//
+const deleteSongFromPlaylist = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleted = await Song.findByIdAndUpdate(id);
+    if (deleted) {
+      return res.status(200).send("Song Deleted")
+    }
+    throw new Error("Song Not Found")
+  } catch (error) {
+    res.status(500).json({error: error.message})
+  }
+}
 
 module.exports = {
   createSong,

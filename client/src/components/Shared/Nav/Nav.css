@@ -7,6 +7,8 @@
   top: 0;
   position: sticky;
   height: 80px;
+  font-family: "Lato", sans-serif;
+  /* box-shadow: 0 1px 0 grey; */
 }
 
 a {
@@ -20,17 +22,37 @@ a {
   padding-left: 30px;
   padding-top: 15px;
   align-self: flex-start;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 400;
 }
 
 .link{
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 24px;
+  transition: all 0.6s 
 }
 
 .link:hover{
   color: #FCEFF9;
-  text-decoration: underline;
+  transition: all 0.5s 
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 2px;
+  bottom: 1px;
+  background-color:#73d499;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.link:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 nav :last-child{

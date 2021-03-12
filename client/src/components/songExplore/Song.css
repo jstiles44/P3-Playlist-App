@@ -5,9 +5,13 @@ align-items: center;
 margin: 20px;
 background-color: #33353C;
 width: 250px;
-height: 340px;
+height: 385px;
 padding: 7px;
 box-shadow:  0 0 4px black;
+transition: .5s;
+border-radius: 20px;
+font-family: "Lato", sans-serif;
+
 }
 
 .song-explore:hover {
@@ -18,7 +22,8 @@ box-shadow:  0 0 4px black;
 
 .album-cover-explore {
   width: 250px;
-  max-height: 300px;
+  height: 250px;
+  border-radius: 20px;
 }
 
 .title-explore,
