@@ -1,21 +1,29 @@
 .recently-added {
-  width: 40vw;
-  height: 100%;
+  width: 30vw;
   display: inline-flex;
+  height: 400px;
   flex-direction: column;
   justify-items: center;
-  height: 50%;
   color: #73D499;
   background-color: #33353C;
-  padding-top: 30px;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-left: 5vw;
+  font-family: "Lato", sans-serif;
 }
 
 .recently-added h2{
   align-self: center;
 }
 
-.recently-added, .slide {
-  background-color: #33353C;
+
+.carousel .slide{
+  background: transparent;
+}
+
+.carousel-root{
+  width: 200px;
+  align-self: center;
 }
 
 .slide-selected{
@@ -38,7 +46,9 @@ button{
   align-self: center;
 }
 
-
+.album-title, .artist{
+  background-color: transparent;
+}
 .album-title{
   padding-top: 10px;
   z-index: 1;
@@ -46,5 +56,6 @@ button{
 
 .artist{
   z-index: 1;
-  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
