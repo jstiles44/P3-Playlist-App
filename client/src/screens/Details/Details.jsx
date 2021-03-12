@@ -56,7 +56,6 @@ const Details = (props) => {
           className="details-album-art"
           src={song.albumCover}
           alt={"album art for this song"}
-          
         />
         <div className="detail">
           <div classname="text">
@@ -67,11 +66,19 @@ const Details = (props) => {
             <div className="release-year">Release Year: {song.releaseYear}</div>
             <div className="song-length">Length: {song.songLength}</div>
           </div>
-          <div className='button-container'>
-          {props.user ? authenticatedOptions : unauthenticatedOptions}
+          <div className="button-container">
+            {props.user ? authenticatedOptions : unauthenticatedOptions}
           </div>
         </div>
-            <iframe className='audio' width="560" height="315" src="https://www.youtube.com/embed/TLV4_xaYynY" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          className="audio"
+          width="560"
+          height="315"
+          src={`https://www.youtube.com/embed/${song.songLink}`}
+          frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </Layout>
   );
