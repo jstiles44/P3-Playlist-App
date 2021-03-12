@@ -17,20 +17,21 @@ grid-template-areas:
   width: 50vw;
   box-shadow:  0 0 5px black;
   border-radius: 20px;
+  font-family: "Lato", sans-serif;
 }
 
 .favorites-profile {
   grid-area: F;
   background-color: #33353C;
-  margin:50px 50px 0 25px;
+  margin: 50px 50px 0 25px;
   width: 38vw;
   height: 300px;
   box-shadow:  0 0 5px black;
   border-radius: 20px;
-
+  font-family: "Lato", sans-serif;
 }
 
-.analytics-profile {
+/* .analytics-profile {
   grid-area: A;
   background-color: #33353C;
   margin:50px 25px 50px 25px;
@@ -38,6 +39,24 @@ grid-template-areas:
   height: 300px;
   box-shadow:  0 0 5px black;
   border-radius: 20px;
+} */
+
+.player-window{
+  grid-area: A;
+  background-color: #33353C;
+  margin:50px 25px 50px 25px;
+  width: 38vw;
+  height: 300px;
+  box-shadow:  0 0 5px black;
+  border-radius: 20px;
+}
+
+.profile-player{
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+  width: 38vw;
+  height: 300px;
 }
 
 .loading-container {
@@ -90,6 +109,12 @@ grid-template-areas:
   width: 8%;
 }
 
+.playlist-label-play {
+  color: white;
+  font-size: 15px;
+  width: 8%;
+}
+
 
 .favorites-box {
   display: flex;
@@ -105,7 +130,6 @@ grid-template-areas:
   margin-left: 15px;
   margin-bottom: 0px;
   font-family: "Lato", sans-serif;
-
 }
 
 

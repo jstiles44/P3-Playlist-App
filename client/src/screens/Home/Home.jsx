@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react';
-import { getSongs } from '../../services/songs.js';
-import Layout from '../../components/Shared/layout/Layout.jsx';
+import { useState, useEffect } from "react";
+import { getSongs } from "../../services/songs.js";
+import Layout from "../../components/Shared/layout/Layout.jsx";
 import SongCarousel from "../../components/Carousels/songCarousel/songCarousel.jsx";
 import ImageCarousel from "../../components/Carousels/ImageCarousel/ImageCarousel.jsx";
-import './Home.css'
+import "./Home.css";
 
 const Home = (props) => {
-
   const [songs, setSongs] = useState([]);
   const [recentlyAdded, setRecentlyAdded] = useState([]);
   const [topRated, setTopRated] = useState([]);
@@ -18,22 +17,26 @@ const Home = (props) => {
       // recently added songs are the first 5 songs that will be at the top of the array.
       const recentlyAdded = songs.splice(0, 5);
       setRecentlyAdded(recentlyAdded);
-    }
-    fetchSongs()
+    };
+    fetchSongs();
   }, []);
-
 
   return (
     <Layout user={props.user}>
-      <div className='home-body'>
-
-      <SongCarousel recentlyAdded={recentlyAdded}/>
-
-      <ImageCarousel />
-        
+      <div className="home-body">
+        <div className="home-carousels">
+        <div className="home-carousel-left">
+            <ImageCarousel />
+          </div>
+          <div className="home-carousel-right">
+            <SongCarousel recentlyAdded={recentlyAdded} />
+          </div>
+          <div className="home-carousel-right">
+            <SongCarousel recentlyAdded={recentlyAdded} />
+          </div>
+        </div>
       </div>
-
-      </Layout>
+    </Layout>
   );
 };
 

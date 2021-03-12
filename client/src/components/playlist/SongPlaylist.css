@@ -44,3 +44,18 @@
   color: red;
   transition: .5s;
 }
+
+.playlist-song-play {
+  color: #73d499;
+  font-size: 15px;
+  width: 4%;
+  font-weight: bold;
+  text-align: center;
+  transition: .5s;
+}
+
+.playlist-song-play:hover {
+  transform: scale(1.50);
+  color: rgb(0, 217, 255);
+  transition: .5s;
+}
