@@ -29,6 +29,11 @@ const Details = (props) => {
     props.setUser(response);
   };
 
+  const preventAdd = () => {
+    alert("Cannot Add Duplicate Song")
+  }
+
+
   const unauthenticatedOptions = (
     <>
       <Link to="/sign-in">
@@ -43,11 +48,19 @@ const Details = (props) => {
 
   const authenticatedOptions = (
     <>
-      <button className="button_slide slide_right" onClick={addToPlaylist}>
+      <button
+        className="button_slide slide_right"
+        onClick={props.user.playlist.find((songPlaylist) => {
+          return songPlaylist._id === song._id
+        }) ? preventAdd : addToPlaylist}
+      >
         Add to Playlist
       </button>
     </>
   );
+
+ 
+  
 
   return (
     <Layout user={props.user}>
@@ -56,7 +69,6 @@ const Details = (props) => {
           className="details-album-art"
           src={song.albumCover}
           alt={"album art for this song"}
-          
         />
         <div className="detail">
           <div classname="text">
@@ -67,11 +79,19 @@ const Details = (props) => {
             <div className="release-year">Release Year: {song.releaseYear}</div>
             <div className="song-length">Length: {song.songLength}</div>
           </div>
-          <div className='button-container'>
-          {props.user ? authenticatedOptions : unauthenticatedOptions}
+          <div className="button-container">
+            {props.user ? authenticatedOptions : unauthenticatedOptions}
           </div>
         </div>
-            <iframe className='audio' width="560" height="315" src="https://www.youtube.com/embed/TLV4_xaYynY" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          className="audio"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/TLV4_xaYynY"
+          frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </Layout>
   );

@@ -8,7 +8,6 @@ const SongPlaylist = (props) => {
     console.log(props.userId, props.songId)
       const response = await deleteSong(props.userId, props.songId);
     props.setUser(response);
-   
   }
   return (
     <div className="playlist-song">
