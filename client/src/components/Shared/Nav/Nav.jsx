@@ -6,6 +6,9 @@ const authenticatedOptions = (
     <NavLink className="link" to="/profile">
       Profile
     </NavLink>
+    <NavLink className='link' to='/create'>
+      Submit A Song
+    </NavLink>
     <NavLink className="link" to="/sign-out">
       Sign Out
     </NavLink>
