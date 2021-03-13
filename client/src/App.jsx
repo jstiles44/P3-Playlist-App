@@ -9,6 +9,7 @@ import SignOut from "./screens/SignOut/SignOut"
 import { verifyUser } from './services/users'
 import { Route, Switch, Redirect } from "react-router-dom"
 import { useState, useEffect } from "react"
+import Create from './screens/Create/Create.jsx'
 
 
 function App() {
@@ -56,6 +57,9 @@ function App() {
           </Route>
           <Route exact path="/profile">
             <Profile user={user} setUser={setUser}/>
+          </Route>
+          <Route exact path="/create">
+            <Create user={user} setUser={setUser}/>
           </Route>
         </Switch>
       }
