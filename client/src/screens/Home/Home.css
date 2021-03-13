@@ -13,14 +13,35 @@
   align-items: center;
 }
 
-.home-carousel-left{
+.home-carousel-songs{
   margin: 10px;
   box-shadow: 0 0 3px black;
   border-radius: 20px;
 }
 
-.home-carousel-right{
+.home-carousel-songs2{
   margin: 10px;
   box-shadow: 0 0 3px black;
   border-radius: 20px;
+}
+
+.home-text-images{
+  /* margin-top: 100px; */
+  height: 670px;
+  width: 600px;
+  margin: 100px;
+  /* box-shadow: 0 0 3px black; */
+  border-radius: 20px;
+}
+
+.welcome-text{
+  /* position: absolute; */
+  font-family: 'Fredoka One', cursive;
+  font-size: 50px;
+  font-weight: 400;
+  color:#73D499;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 45px;
+
 }

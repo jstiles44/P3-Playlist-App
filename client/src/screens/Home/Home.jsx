@@ -25,14 +25,19 @@ const Home = (props) => {
     <Layout user={props.user}>
       <div className="home-body">
         <div className="home-carousels">
-        <div className="home-carousel-left">
+          <div className="home-text-images">
+            <div className="welcome-text">
+              Welcome our website, bla bla bla bla bla bla bla?!
+            </div>
             <ImageCarousel />
           </div>
-          <div className="home-carousel-right">
-            <SongCarousel recentlyAdded={recentlyAdded} />
-          </div>
-          <div className="home-carousel-right">
-            <SongCarousel recentlyAdded={recentlyAdded} />
+          <div className="songCarousels">
+            <div className="home-carousel-songs">
+              <SongCarousel recentlyAdded={recentlyAdded} />
+            </div>
+            <div className="home-carousel-songs2">
+              <SongCarousel recentlyAdded={recentlyAdded} />
+            </div>
           </div>
         </div>
       </div>
