@@ -18,3 +18,11 @@ export const getSong = async (id) => {
   }
 }
 
+export const addSong = async song => {
+  try {
+      const response = await api.post('/songs', song)
+      return response.data
+  } catch (error) {
+      throw error
+  }
+}
