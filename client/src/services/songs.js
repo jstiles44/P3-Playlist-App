@@ -18,6 +18,7 @@ export const getSong = async (id) => {
   }
 }
 
+
 export const updateSong = async (id, song) => {
   try {
       const response = await api.put(`/songs/${id}`, song)
@@ -25,4 +26,6 @@ export const updateSong = async (id, song) => {
   } catch (error) {
       throw error
   }
+
 }
+
