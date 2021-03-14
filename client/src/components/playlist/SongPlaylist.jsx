@@ -1,5 +1,6 @@
 import "./SongPlaylist.css"
-import { deleteSong } from "../../services/users"
+import {useState} from "react"
+import { deleteSong, addClick } from "../../services/users"
 
 
 const SongPlaylist = (props) => {
@@ -10,19 +11,29 @@ const SongPlaylist = (props) => {
     props.setUser(response);
   }
 
+  const handleDoubleClick = () => {
+
+    addClickToSong()
+    play()
+  }
+
+  const addClickToSong = async () => {    
+    const response = await addClick(props.userId, props.songId)
+  }
+
   const play = () => {
     console.log(props.songLink)
     props.setSongToPlay(props.songLink)
   }
   
   return (
-    <div className="playlist-song">
+    <div className="playlist-song" onDoubleClick={handleDoubleClick}>
       <div className="playlist-song-title">{props.title}</div>
       <div className="playlist-song-artist">{props.artist} </div>
       <div className="playlist-song-length">{props.songLength}</div>
       <div className="playlist-song-rating">rating</div>
       <div className="playlist-song-delete" onClick={deleteFromPlaylist}>X</div> 
-      <div className="playlist-song-play" onClick={play}>▶</div> 
+      {/* <div className="playlist-song-play" onDoubleClick={play}>▶</div>  */}
     </div>
   )
 }

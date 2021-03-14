@@ -81,10 +81,8 @@ const changePassword = async (req, res) => { }
 const addSong = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
-    console.log(req.body._id)
     const song = await Song.findById(req.body._id)
     user.playlist.push(song)
-    console.log(user)
     await user.save()
     const userPayload = { 
       username: user.username,
@@ -98,26 +96,117 @@ const addSong = async (req, res) => {
   }
 }
 
+// const addClick = async (req, res) => {
+//   try {
+//     const user = await User.findById(req.params.id)
+//     const songClicked = await Song.findById(req.body.song)
+//     console.log("before adding song", user.playlist)
+
+//     const updatedSong = user.playlist.find((song) => {
+//       if (song._id.equals(songClicked._id)) {
+//         console.log("song in playlist", song)
+//         return {
+//           "title": song.title,
+//           "artist": song.artist,
+//           "releaseYear": song.releaseYear,
+//           "genre": song.genre,
+//           "albumCover": song.albumCover,
+//           "album": song.album,
+//           "songLength": song.songLength,
+//           "songLink": song.songLink,
+//           "userClicks": song.userClicks++
+//         } 
+//           return song
+//       }
+//     })
+  
+//     await user.save()
+//     console.log("after pushing song", user.playlist)
+//     const userPayload = {
+//       username: user.username,
+//       email: user.email,
+//       playlist: user.playlist,
+//       id: user._id
+//     }
+//     res.json(userPayload)
+//   } catch (error) {
+//     res.status(500).json({ error: error.message })
+//   }
+// }
+
+const addClick = async (req, res) => {
+  try {
+  const user = await User.findById(req.params.id)
+  const songClicked = await Song.findById(req.body.song)
+  console.log("user playlist before logic", user.playlist)
+ const userPlaylist = []
+
+    user.playlist.map((song) => {
+      // console.log(song)
+      (song._id.equals(songClicked._id)) ? userPlaylist.push(
+        {
+          "_id": song._id,
+          "title": song.title,
+          "artist": song.artist,
+          "releaseYear": song.releaseYear,
+          "genre": song.genre,
+          "albumCover": song.albumCover,
+          "album": song.album,
+          "songLength": song.songLength,
+          "songLink": song.songLink,
+          "userClicks": song.userClicks + 1
+        }) : userPlaylist.push({
+          "_id": song._id,
+          "title": song.title,
+          "artist": song.artist,
+          "releaseYear": song.releaseYear,
+          "genre": song.genre,
+          "albumCover": song.albumCover,
+          "album": song.album,
+          "songLength": song.songLength,
+          "songLink": song.songLink,
+          "userClicks": song.userClicks
+        })
+    })
+      
+    console.log("Updated playlist after logic", userPlaylist)
+
+    user.playlist = userPlaylist
+
+    await user.save()
+    console.log("Updated playlist after Save", user.playlist)
+      const userPayload = {
+        username: user.username,
+        email: user.email,
+        playlist: user.playlist,
+        id: user._id
+      }
+      res.json(userPayload)
+    } catch (error) {
+      res.status(500).json({ error: error.message })
+    }
+  }
+
+
+
+
 const deleteSong = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
-    console.log(req.body.song)
     const downSong = await Song.findById(req.body.song)
+
     const userPlaylist = user.playlist.filter(song => {
       return !song._id.equals(downSong._id)
     })
-    // const song = await User.playlist.findById({_id:req.body._id})
-  //  console.log(userPlaylist)
+    
     user.playlist = userPlaylist
-    console.log(user.playlist)
     await user.save()
-    const userPayload = { 
+    const userPayload = {
       username: user.username,
       email: user.email,
       playlist: user.playlist,
       id: user._id
     }
-    console.log(userPayload)
     res.json(userPayload)
   } catch (error) {
     res.status(500).json({ error: error.message })
@@ -130,5 +219,6 @@ const deleteSong = async (req, res) => {
     verify,
     changePassword,
     addSong,
-    deleteSong
+    deleteSong,
+    addClick
 }

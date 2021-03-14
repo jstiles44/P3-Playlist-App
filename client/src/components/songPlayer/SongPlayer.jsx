@@ -1,13 +1,13 @@
-import './SongPlayer.css'
-import {useEffect} from "react"
+import "./SongPlayer.css";
+import { useEffect } from "react";
 
 const SongPlayer = (props) => {
-  
-  useEffect(() => {},[props.songToPlay])
+  useEffect(() => {
+    
+  }, [props.songToPlay]);
 
   return (
     <div>
-      {/* <p>{props.songToPlay}</p> */}
       <iframe
         className="embeddedPlayer"
         width="358.72"
