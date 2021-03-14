@@ -2,7 +2,7 @@ import './Create.css';
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Layout from "../../components/Shared/layout/Layout"
-import { addSong} from '../../services/songs.js'
+import { addSong } from '../../services/users.js'
 
 
 const Create = (props) => {
