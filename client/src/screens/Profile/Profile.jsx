@@ -17,6 +17,8 @@ const Profile = (props) => {
 
   const { playlist } = props.user;
 
+  // console.log(playlist.length)
+
   const playlistSongsJSX = playlist.map((song) => (
     <SongPlaylist
       title={song.title}
@@ -27,6 +29,7 @@ const Profile = (props) => {
       setUser={props.setUser}
       songLink={song.songLink}
       setSongToPlay={setSongToPlay}
+      playlist={playlist}
     />
   ));
 
