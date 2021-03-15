@@ -15,4 +15,5 @@ const compareKey = key =>
   export const artistAZ= arr => arr.sort(compareKey('artist'))
   export const artistZA = arr => arr.sort(compareKey('artist')).reverse()
 export const clickSort = arr => arr.sort(compareKey('userClicks')).reverse()
-  export const ratingSort = arr => arr.sort(compareKey('rating')).reverse()
+export const ratingSort = arr => arr.sort(compareKey('rating')).reverse()
+export const listensSort = arr => arr.sort(compareKey('globalListens')).reverse()

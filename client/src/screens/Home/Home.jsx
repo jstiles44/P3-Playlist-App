@@ -4,26 +4,28 @@ import Layout from "../../components/Shared/layout/Layout.jsx";
 import SongCarousel from "../../components/Carousels/songCarousel/songCarousel.jsx";
 import SongCarousel2 from "../../components/Carousels/songCarousel2/songCarousel2.jsx";
 import ImageCarousel from "../../components/Carousels/ImageCarousel/ImageCarousel.jsx";
-import { ratingSort } from "../../utils/sort";
+import { ratingSort, listensSort } from "../../utils/sort";
 import "./Home.css";
 
 const Home = (props) => {
-  const [songs, setSongs] = useState([]);
-  const [recentlyAdded, setRecentlyAdded] = useState([]);
+  const [topListened, setTopListened] = useState([]);
   const [topRated, setTopRated] = useState([]);
 
   useEffect(() => {
     const fetchSongs = async () => {
       const songs = await getSongs();
-      setSongs(songs);
-      // recently added songs are the first 5 songs that will be at the top of the array.
-      const recentlyAdded = songs.splice(0, 5);
-      setRecentlyAdded(recentlyAdded);
+      setTopListened(songs.slice());
       setTopRated(songs.slice())
     };
     fetchSongs();
   }, []);
-  const topRatedJSX = ratingSort(topRated).slice(0, 5); 
+
+  const topRatedJSX = ratingSort(topRated).slice(0, 5);
+
+  const topListenedJSX = listensSort(topListened).slice(0, 5)
+
+  console.log(topRatedJSX)
+
   return (
     <Layout user={props.user}>
       <div className="home-body">
@@ -36,7 +38,7 @@ const Home = (props) => {
           </div>
           <div className="songCarousels">
             <div className="home-carousel-songs">
-              <SongCarousel recentlyAdded={recentlyAdded} />
+              <SongCarousel recentlyAdded={topListenedJSX} />
             </div>
             <div className="home-carousel-songs2">
               <SongCarousel2 topRated={topRatedJSX} />

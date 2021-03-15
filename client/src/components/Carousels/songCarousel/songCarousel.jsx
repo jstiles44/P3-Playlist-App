@@ -6,7 +6,7 @@ import './songCarousel.css'
 const SongCarousel = (props) => {
   return (
     <div className='recently-added'>
-      <h2>Recently Added</h2>
+      <h2>Most Plays</h2>
     <Carousel autoPlay={true}
       interval='3000'
       infiniteLoop
