@@ -61,7 +61,7 @@ const Profile = (props) => {
             <div className="playlist-label-title">Title</div>{" "}
             <div className="playlist-label-artist">Artist</div>{" "}
             <div className="playlist-label-time">⏱</div>{" "}
-            <div className="playlist-label-rating">Rating</div>
+            <div className="playlist-label-rating">Released</div>
             <div className="playlist-label-delete">Delete</div>
             {/* <div className="playlist-label-play">Play</div> */}
           </div>
