@@ -31,16 +31,28 @@
 .sign-up-form{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .email{
   height: 20px;
+  margin-left:5px
+}
+
+.sign-up-username{
+  height: 20px;
+  margin-left:5px
+}
+
+.sign-up-password{
+  height: 20px;
+  margin-left:5px
 }
 
 .password-confirmation{
   height: 20px;
+  margin-left:5px
+
 }
 
 .sign-up-button{
@@ -76,31 +88,27 @@
   box-shadow: inset 100px 0 0 0 #ffffff;
 }
 
+.sign-up-username-div{
+  margin-bottom: 10px;
+  position: relative;
+  top: -5px;
+}
 
 .email-div{
   margin-bottom: 10px;
   position: relative;
   top: -5px;
-  right: 23.5px;
 }
 
 .password-confirmation-div{
   margin-bottom: 10px;
   position: relative;
   top: -5px;
-  right: 60px;
 }
 
-.sign-up-username-div{
-  margin-bottom: 10px;
-  position: relative;
-  top: -5px;
-  right: 37px;
-}
 
 .sign-up-password-div{
   margin-bottom: 10px;
   position: relative;
   top: -5px;
-  right: 37.5px;
 }
