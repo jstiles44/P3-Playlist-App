@@ -1,6 +1,6 @@
 .profile-container {
 background-color: #454851;
-width: 100vw;
+max-width: 100vw;
 display: grid;
 grid-template-areas: 
 "P P F F" 
@@ -11,9 +11,9 @@ grid-template-areas:
   grid-area: P;
   background-color: #33353C;
   height: 650px;
-  /* overflow: scroll; */
+  overflow: scroll;
   overflow-x: hidden;
-  margin:50px 25px 50px 75px;
+  margin:50px 0 50px 50px;
   width: 50vw;
   box-shadow:  0 0 5px black;
   border-radius: 20px;
@@ -23,41 +23,26 @@ grid-template-areas:
 .favorites-profile {
   grid-area: F;
   background-color: #33353C;
-  margin: 50px 50px 0 25px;
-  width: 38vw;
+  margin: 50px 25px 0 25px;
+  width: 39vw;
   height: 300px;
   box-shadow:  0 0 5px black;
   border-radius: 20px;
   font-family: "Lato", sans-serif;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y:auto;
 }
-
-/* .analytics-profile {
-  grid-area: A;
-  background-color: #33353C;
-  margin:50px 25px 50px 25px;
-  width: 38vw;
-  height: 300px;
-  box-shadow:  0 0 5px black;
-  border-radius: 20px;
-} */
 
 .player-window{
   grid-area: A;
   background-color: #33353C;
   margin:50px 25px 50px 25px;
-  width: 38vw;
+  width: 39vw;
   height: 300px;
   box-shadow:  0 0 5px black;
   border-radius: 20px;
 }
-
-/* .profile-player{
-  border-radius: 20px;
-  overflow: hidden;
-  z-index: 1;
-  width: 38vw;
-  height: 300px;
-} */
 
 .loading-container {
   height: 90%;
@@ -94,13 +79,13 @@ grid-template-areas:
 .playlist-label-time {
   color: white;
   font-size: 15px;
-  width: 12%;
+  width: 11%;
 }
 
 .playlist-label-rating {
   color: white;
   font-size: 15px;
-  width: 10%;
+  width: 11%;
 }
 
 .playlist-label-delete {
@@ -119,6 +104,7 @@ grid-template-areas:
 .favorites-box {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-around;
   height: 300px;
 }
@@ -128,7 +114,6 @@ grid-template-areas:
   font-size: 20px;
   margin-top: 5px;
   margin-left: 15px;
-  margin-bottom: 0px;
   font-family: "Lato", sans-serif;
 }
 

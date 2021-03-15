@@ -9,5 +9,6 @@ router.get('/verify', controllers.verify)
 router.post('/change-password', controllers.changePassword)
 router.patch('/:id/songs', controllers.addSong)
 router.patch('/:id/playlist', controllers.deleteSong)
+router.patch('/:id/click', controllers.addClick)
 
 module.exports = router

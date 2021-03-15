@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { getSong } from "../../services/songs";
+import { getSong, updateSong } from "../../services/songs";
 import Layout from "../../components/Shared/layout/Layout";
 import { addSong } from "../../services/users";
 import "./Details.css";
 import { Link } from "react-router-dom";
+// import { updateSong } from "../../../../controllers/songs";
+import ReviewForm from '../../components/ReviewForm/ReviewForm'
 
 const Details = (props) => {
   const [song, setSong] = useState(null);
+  const [review, setReview] = useState({
+    rating: '',
+  })
   const { id } = useParams();
   const [isLoaded, setLoaded] = useState(false);
 
@@ -20,6 +25,21 @@ const Details = (props) => {
     fetchSong();
   }, [id]);
 
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setReview({
+      ...review,
+      [name]: value
+    })
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    song.reviews.push(review)
+    setSong(song)
+    await updateSong(id, song)
+  }
+
   if (!isLoaded) {
     return <p>Loading...</p>;
   }
@@ -30,9 +50,8 @@ const Details = (props) => {
   };
 
   const preventAdd = () => {
-    alert("Cannot Add Duplicate Song")
-  }
-
+    alert("Cannot Add Duplicate Song");
+  };
 
   const unauthenticatedOptions = (
     <>
@@ -50,17 +69,18 @@ const Details = (props) => {
     <>
       <button
         className="button_slide slide_right"
-        onClick={props.user.playlist.find((songPlaylist) => {
-          return songPlaylist._id === song._id
-        }) ? preventAdd : addToPlaylist}
+        onClick={
+          props.user.playlist.find((songPlaylist) => {
+            return songPlaylist._id === song._id;
+          })
+            ? preventAdd
+            : addToPlaylist
+        }
       >
         Add to Playlist
       </button>
     </>
   );
-
- 
-  
 
   return (
     <Layout user={props.user}>
@@ -82,6 +102,9 @@ const Details = (props) => {
           <div className="button-container">
             {props.user ? authenticatedOptions : unauthenticatedOptions}
           </div>
+        </div>
+        <div className="reviews-wrapper">
+          <ReviewForm rating={review.rating} onSubmit={handleSubmit} onChange={handleChange} />
         </div>
         <iframe
           className="audio"

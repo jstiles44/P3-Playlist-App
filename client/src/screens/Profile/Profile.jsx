@@ -4,47 +4,55 @@ import SongPlayer from "../../components/songPlayer/SongPlayer";
 import { useState, useEffect } from "react";
 import "./Profile.css";
 import Favorites from "../../components/playlist/Favorites";
+import {clickSort} from "../../utils/sort"
 
 const Profile = (props) => {
   const [loading, setLoading] = useState(true);
-  const [songToPlay, setSongToPlay] = useState('test');
+  const [songToPlay, setSongToPlay] = useState();
+  const [favoriteSongs, setFavoriteSongs] = useState([])
+
+  const { playlist } = props.user;
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 1500);
+    setFavoriteSongs(props.user.playlist.slice())
   }, []);
+
 
   const { playlist } = props.user;
 
-  const playlistSongsJSX = playlist.map((song) => (
+  const playlistSongsJSX = playlist.map((song,index) => (
     <SongPlaylist
       title={song.title}
       artist={song.artist}
       songLength={song.songLength}
+      userClicks={song.userClicks}
+      album={song.album}
+      albumCover={song.albumCover}
+      releaseYear={song.releaseYear}
+      genre={song.genre}
       songId={song._id}
       userId={props.user.id}
       setUser={props.setUser}
       songLink={song.songLink}
       setSongToPlay={setSongToPlay}
+      playlist={playlist}
+      index={index}
+      user={props.user}
     />
   ));
 
-  // const songPlayerJSX = playlist.map((song) => (
-  //   <div>
-  //     <SongPlayer songLink={song.songLink} />
-  //   </div>
-  // ));
-
   const songPlayerJSX = (
     <div>
-      <SongPlayer songToPlay={songToPlay}/>
+      <SongPlayer songToPlay={songToPlay} />
     </div>
   );
 
-  const playlistFavoritesJSX = playlist.slice(0, 3).map((song) => (
+
+  const playlistFavoritesJSX = clickSort(favoriteSongs).slice(0, 3).map((song) => (
     <Favorites
-      // id={song._id}
       title={song.title}
       albumCover={song.albumCover}
     />
@@ -58,9 +66,9 @@ const Profile = (props) => {
             <div className="playlist-label-title">Title</div>{" "}
             <div className="playlist-label-artist">Artist</div>{" "}
             <div className="playlist-label-time">⏱</div>{" "}
-            <div className="playlist-label-rating">Rating</div>
+            <div className="playlist-label-rating">Released</div>
             <div className="playlist-label-delete">Delete</div>
-            <div className="playlist-label-play">Play</div>
+            {/* <div className="playlist-label-play">Play</div> */}
           </div>
           {loading ? (
             <div className="loading-container">
@@ -81,24 +89,13 @@ const Profile = (props) => {
             <div className="favorites-box">{playlistFavoritesJSX}</div>
           )}
         </div>
-        {/* <div className="analytics-profile">
-          {loading ? (
-            <div className="loading-container">
-              <div className="loader"></div>
-            </div>
-          ) : (
-            <div>test</div>
-          )}
-        </div> */}
         <div className="player-window">
           {loading ? (
             <div className="loading-container">
               <div className="loader"></div>
             </div>
           ) : (
-              <div className="songPlayer">
-                {songPlayerJSX}
-              </div>
+            <div className="songPlayer">{songPlayerJSX}</div>
           )}
         </div>
       </div>

@@ -14,8 +14,8 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Electric Ladyland",
         "songLength": "4:01",
-        "songLink": "TLV4_xaYynY"
-
+        "songLink": "TLV4_xaYynY",
+        "userClicks": 0
         },
         {
         "title": "Levels",
@@ -25,7 +25,8 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Levels Single",
           "songLength": "5:39",
-          "songLink":"TLV4_xaYynY"
+          "songLink": "374sYMQugSI",
+          "userClicks": 0
         },
         {
         "title": "Cigarette Daydreams",
@@ -35,7 +36,8 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Melophobia",
           "songLength": "3:29",
-          "songLink":"TLV4_xaYynY"
+          "songLink": "vAu4WIK-VfM",
+          "userClicks": 0
       },
       {
         "title": "Decks Dark",
@@ -45,7 +47,8 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "A Moon Shaped Pool",
         "songLength": "4:41",
-        "songLink":"Del3C2W63Pk"
+        "songLink": "Del3C2W63Pk",
+        "userClicks": 0
         },
     {
         "title": "Ghost Ship",
@@ -55,7 +58,8 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "The Magic Whip",
       "songLength": "4:59",
-      "songLink":"TLV4_xaYynY"
+      "songLink": "ql0ejO9Pkdk",
+      "userClicks": 0
         },
     {
         "title": "Inertia Creeps",
@@ -65,7 +69,8 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Mezzanine",
       "songLength": "5:57",
-        "songLink":"TLV4_xaYynY"
+      "songLink": "w3mn7EC-skg",
+      "userClicks": 0
       },
       {
         "title": "Use Me",
@@ -75,7 +80,8 @@ const main = async () => {
         "albumCover": "https://i.imgur.com/QuJRMR7.jpg",
         "album": "Still Bill",
         "songLength": "3:45",
-        "songLink":"TLV4_xaYynY"
+        "songLink": "g3hBYTkI-sE",
+        "userClicks": 0
       },
     ]
   await Song.insertMany(songs)
