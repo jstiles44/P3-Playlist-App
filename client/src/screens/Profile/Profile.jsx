@@ -21,7 +21,7 @@ const Profile = (props) => {
   }, []);
 
 
-  const { playlist } = props.user;
+
 
   const playlistSongsJSX = playlist.map((song,index) => (
     <SongPlaylist

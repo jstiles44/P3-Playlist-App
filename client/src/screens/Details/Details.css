@@ -64,6 +64,15 @@
   font-size: 20px;
 }
 
+.rating {
+  font-size: 20px;
+}
+
+.stars {
+  background-color: green;
+}
+
+
 .button-container{
   position: absolute;
 }
@@ -106,4 +115,8 @@
   height: 400px;
   width: 400px;
   margin: 10px;
+}
+
+.reviews-wrapper{
+  position: relative;
 }

@@ -49,10 +49,7 @@ const SongPlaylist = (props) => {
     const response = await addClick(props.userId, props.songId)
   }
 
-  const play = () => {
-    console.log(props.songLink)
-    props.setSongToPlay(props.songLink)
-  }
+  
   
 
   return (

@@ -29,3 +29,11 @@ export const updateSong = async (id, song) => {
 
 }
 
+export const createSong = async (song) => {
+  try {
+      const response = await api.put(`/songs`, song)
+      return response.data
+  } catch (error) {
+      throw error
+  }
+}
