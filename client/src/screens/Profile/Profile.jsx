@@ -20,7 +20,10 @@ const Profile = (props) => {
     setFavoriteSongs(props.user.playlist.slice())
   }, []);
 
-  const playlistSongsJSX = playlist.map((song) => (
+
+  const { playlist } = props.user;
+
+  const playlistSongsJSX = playlist.map((song,index) => (
     <SongPlaylist
       title={song.title}
       artist={song.artist}
@@ -35,6 +38,9 @@ const Profile = (props) => {
       setUser={props.setUser}
       songLink={song.songLink}
       setSongToPlay={setSongToPlay}
+      playlist={playlist}
+      index={index}
+      user={props.user}
     />
   ));
 
@@ -47,7 +53,6 @@ const Profile = (props) => {
 
   const playlistFavoritesJSX = clickSort(favoriteSongs).slice(0, 3).map((song) => (
     <Favorites
-      // id={song._id}
       title={song.title}
       albumCover={song.albumCover}
     />

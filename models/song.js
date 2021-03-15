@@ -11,12 +11,22 @@ const Song = new Schema(
     album: {type: String, required: true},
     songLength: { type: String, required: true },
     songLink: { type: String, required: true },
-    userClicks: {type: Number, required: false}
-    // userIds: [{ type: Schema.Types.ObjectId, ref: 'users' }]
-    // rating: {rating: Number, userId: String}
-    // ratings: [{ rating: Number, songId: { type: Schema.Types.ObjectId, ref: 'songs' } }] (will be added post mvp)
+    userClicks: {type: Number, required: false},
+    reviews: [{
+      rating: { type: Number, required: true },
+    }]
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true}}
 );
+
+Song.virtual('rating').get(function () {
+  let totalRating = 0
+  this.reviews.forEach(review => {
+    totalRating = totalRating + review.rating
+  })
+  return totalRating / this.reviews.length
+})
 
 module.exports = mongoose.model('songs', Song)
