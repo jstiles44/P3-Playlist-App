@@ -1,11 +1,13 @@
 .profile-container {
 background-color: #454851;
 max-width: 100vw;
+height: 750px;
 display: grid;
 grid-template-areas: 
 "P P F F" 
 "P P A A";
 }
+
 
 .playlist-container {
   grid-area: P;
@@ -29,9 +31,9 @@ grid-template-areas:
   box-shadow:  0 0 5px black;
   border-radius: 20px;
   font-family: "Lato", sans-serif;
-  overflow: scroll;
+  /* overflow: scroll;
   overflow-x: hidden;
-  overflow-y:auto;
+  overflow-y:auto; */
 }
 
 .player-window{
@@ -149,13 +151,18 @@ grid-template-areas:
   100% { transform: rotate(360deg); }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #232020;
-  
-  border-radius: 10px;
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+  border-radius: 10px;
 }
 
-::-webkit-scrollbar-corner {
-  background-color: #464749;
+::-webkit-scrollbar-thumb {
+  background: #6f7381; 
+  border-radius: 10px;
+  height: 50px;
+
 }

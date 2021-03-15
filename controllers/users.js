@@ -138,7 +138,6 @@ const addClick = async (req, res) => {
   try {
   const user = await User.findById(req.params.id)
   const songClicked = await Song.findById(req.body.song)
-  console.log("user playlist before logic", user.playlist)
  const userPlaylist = []
 
     user.playlist.map((song) => {
@@ -169,12 +168,11 @@ const addClick = async (req, res) => {
         })
     })
       
-    console.log("Updated playlist after logic", userPlaylist)
+
 
     user.playlist = userPlaylist
 
     await user.save()
-    console.log("Updated playlist after Save", user.playlist)
       const userPayload = {
         username: user.username,
         email: user.email,

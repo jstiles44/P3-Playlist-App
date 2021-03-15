@@ -15,7 +15,9 @@ const main = async () => {
         "album": "Electric Ladyland",
         "songLength": "4:01",
         "songLink": "TLV4_xaYynY",
-        "userClicks": 0
+        "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
         },
         {
         "title": "Levels",
@@ -26,7 +28,9 @@ const main = async () => {
         "album": "Levels Single",
           "songLength": "5:39",
           "songLink": "374sYMQugSI",
-          "userClicks": 0
+          "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
         },
         {
         "title": "Cigarette Daydreams",
@@ -37,7 +41,9 @@ const main = async () => {
         "album": "Melophobia",
           "songLength": "3:29",
           "songLink": "vAu4WIK-VfM",
-          "userClicks": 0
+          "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
       },
       {
         "title": "Decks Dark",
@@ -48,7 +54,9 @@ const main = async () => {
         "album": "A Moon Shaped Pool",
         "songLength": "4:41",
         "songLink": "Del3C2W63Pk",
-        "userClicks": 0
+        "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
         },
     {
         "title": "Ghost Ship",
@@ -59,7 +67,9 @@ const main = async () => {
         "album": "The Magic Whip",
       "songLength": "4:59",
       "songLink": "ql0ejO9Pkdk",
-      "userClicks": 0
+      "userClicks": 0,
+      "globalListens": 0,
+      "reviews": []
         },
     {
         "title": "Inertia Creeps",
@@ -70,7 +80,9 @@ const main = async () => {
         "album": "Mezzanine",
       "songLength": "5:57",
       "songLink": "w3mn7EC-skg",
-      "userClicks": 0
+      "userClicks": 0,
+      "globalListens": 0,
+      "reviews": []
       },
       {
         "title": "Use Me",
@@ -81,7 +93,9 @@ const main = async () => {
         "album": "Still Bill",
         "songLength": "3:45",
         "songLink": "g3hBYTkI-sE",
-        "userClicks": 0
+        "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
       },
     ]
   await Song.insertMany(songs)

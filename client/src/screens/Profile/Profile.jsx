@@ -22,6 +22,7 @@ const Profile = (props) => {
   }, []);
 
 
+
   const playlistSongsJSX = playlist.map((song, index) => (
     <SongPlaylist
       title={song.title}
@@ -56,6 +57,15 @@ const Profile = (props) => {
       <Favorites title={song.title} albumCover={song.albumCover} />
     ));
 
+
+  const playlistFavoritesJSX = clickSort(favoriteSongs).slice(0, 3).map((song) => (
+    <Favorites
+      title={song.title}
+      artist={song.artist}
+      albumCover={song.albumCover}
+    />
+  ));
+
   const handleClickAutoplay = () => {
     setAutoPlay(!autoPlay);
     setSongToPlay();
@@ -71,6 +81,7 @@ const Profile = (props) => {
       window.location.reload(false);
     }
   };
+
 
   return (
     <Layout user={props.user}>
