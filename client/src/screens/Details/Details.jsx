@@ -48,6 +48,7 @@ const Details = (props) => {
 
   const addToPlaylist = async () => {
     const response = await addSong(props.user.id, song);
+    alert('Song added to playlist!')
     props.setUser(response);
   };
 
