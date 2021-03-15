@@ -15,7 +15,6 @@ const SongPlaylist = (props) => {
       props.setSongToPlay(props.playlist[x + 1].songLink);
 
       let timeout = convertTime(props.playlist[x + 1].songLength) * 100;
-      console.log(timeout);
 
       if (x < props.playlist.length - 2) {
         x++;
@@ -34,7 +33,6 @@ const SongPlaylist = (props) => {
       return s;
     };
     let timeout = convertTime(props.songLength) * 100;
-    console.log(timeout);
     setTimeout(changeSong, timeout);
   };
 
