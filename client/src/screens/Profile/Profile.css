@@ -148,3 +148,14 @@ grid-template-areas:
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+::-webkit-scrollbar-thumb {
+  background: #232020;
+  
+  border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #464749;
+}

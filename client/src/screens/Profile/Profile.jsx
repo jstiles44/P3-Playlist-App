@@ -21,6 +21,7 @@ const Profile = (props) => {
     setFavoriteSongs(props.user.playlist.slice());
   }, []);
 
+
   const playlistSongsJSX = playlist.map((song, index) => (
     <SongPlaylist
       title={song.title}

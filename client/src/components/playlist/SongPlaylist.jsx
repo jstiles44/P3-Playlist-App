@@ -44,9 +44,14 @@ const SongPlaylist = (props) => {
     play();
   };
 
-  const addClickToSong = async () => {
-    const response = await addClick(props.userId, props.songId);
-  };
+
+    addClickToSong()
+    play()
+  }
+
+  const addClickToSong = async () => {    
+    const response = await addClick(props.userId, props.songId)
+  }
 
   return (
     <div
