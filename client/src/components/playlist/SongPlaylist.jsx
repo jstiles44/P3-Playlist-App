@@ -2,6 +2,7 @@
 import "./SongPlaylist.css"
 import {useState} from "react"
 import { deleteSong, addClick } from "../../services/users"
+import {editSong} from "../../services/songs"
 
 const SongPlaylist = (props) => {
   const deleteFromPlaylist = async () => {
@@ -42,21 +43,24 @@ const SongPlaylist = (props) => {
   const handleDoubleClick = () => {
 
     addClickToSong()
+    addGlobalListen()
     play()
   }
 
-  const addClickToSong = async () => {    
+  const addClickToSong = async () => {
+    console.log(props.songId)
     const response = await addClick(props.userId, props.songId)
   }
-
-  const play = () => {
-    console.log(props.songLink)
-    props.setSongToPlay(props.songLink)
+  
+  const addGlobalListen = async () => {
+    console.log(props.songId)
+    const response = await editSong(props.songId)
+    
   }
   
 
   return (
-    <div className="playlist-song" onDoubleClick={handleDoubleClick} onClick={(e) => play(e.target.value)}>
+    <div className="playlist-song" onDoubleClick={handleDoubleClick}>
       <div className="playlist-song-title">{props.title}</div>
       <div className="playlist-song-artist">{props.artist} </div>
       <div className="playlist-song-length">{props.songLength}</div>

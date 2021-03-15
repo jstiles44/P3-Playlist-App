@@ -11,7 +11,8 @@ const Song = new Schema(
     album: {type: String, required: true},
     songLength: { type: String, required: true },
     songLink: { type: String, required: true },
-    userClicks: {type: Number, required: false},
+    userClicks: { type: Number, required: true },
+    globalListens: {type: Number, required: true},
     reviews: [{
       rating: { type: Number, required: true },
     }]

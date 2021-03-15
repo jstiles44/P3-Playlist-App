@@ -11,8 +11,8 @@
   background-color: #454851;
   display: flex;
   justify-content: space-between;
-  padding: 0 100px;
-  padding-top: 30px;
+  max-width: 100vw;
+  padding: 30px 100px 0 80px;
   align-items: center;
   height: 50px;
 }

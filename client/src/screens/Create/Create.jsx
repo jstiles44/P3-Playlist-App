@@ -2,7 +2,7 @@ import './Create.css';
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Layout from "../../components/Shared/layout/Layout"
-import { addSong } from '../../services/users.js'
+import { createSong } from '../../services/songs.js'
 
 
 const Create = (props) => {
@@ -30,7 +30,7 @@ const Create = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const created = await addSong(song);
+    const created = await createSong(song);
     setCreated(true)
   }
 

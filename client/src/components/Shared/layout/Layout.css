@@ -1,0 +1,11 @@
+.layout {
+  z-index: 3;
+  top: 0;
+  position: sticky;
+}
+
+.layout-children {
+  /* min-height: 100vh; */
+  background-color:  #454851;
+  min-height: 90vh;
+}
