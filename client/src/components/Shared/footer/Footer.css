@@ -8,6 +8,7 @@
   position: sticky;
   height: 80px;
   align-items: center;
+  border-top: solid 1px grey;
 }
 
 .will , .lauren, .mike, .jake {
