@@ -43,11 +43,7 @@ const SongPlaylist = (props) => {
   };
 
   const handleDoubleClick = () => {
-    addClickToSong();
-    play();
-  };
-
-
+  
     addClickToSong()
     addGlobalListen()
     play()

@@ -51,13 +51,7 @@ const Profile = (props) => {
     </div>
   );
 
-  const playlistFavoritesJSX = clickSort(favoriteSongs)
-    .slice(0, 3)
-    .map((song) => (
-      <Favorites title={song.title} albumCover={song.albumCover} />
-    ));
-
-
+ 
   const playlistFavoritesJSX = clickSort(favoriteSongs).slice(0, 3).map((song) => (
     <Favorites
       title={song.title}
