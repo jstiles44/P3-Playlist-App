@@ -67,3 +67,12 @@ export const deleteSong = async (id, song) => {
     throw error
   }
 }
+
+export const addClick = async (id, song) => {
+  try {
+    const response = await api.patch(`/${id}/click`, { song })
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}

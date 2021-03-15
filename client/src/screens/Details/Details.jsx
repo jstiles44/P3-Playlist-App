@@ -50,9 +50,8 @@ const Details = (props) => {
   };
 
   const preventAdd = () => {
-    alert("Cannot Add Duplicate Song")
-  }
-
+    alert("Cannot Add Duplicate Song");
+  };
 
   const unauthenticatedOptions = (
     <>
@@ -70,17 +69,18 @@ const Details = (props) => {
     <>
       <button
         className="button_slide slide_right"
-        onClick={props.user.playlist.find((songPlaylist) => {
-          return songPlaylist._id === song._id
-        }) ? preventAdd : addToPlaylist}
+        onClick={
+          props.user.playlist.find((songPlaylist) => {
+            return songPlaylist._id === song._id;
+          })
+            ? preventAdd
+            : addToPlaylist
+        }
       >
         Add to Playlist
       </button>
     </>
   );
-
- 
-  
 
   return (
     <Layout user={props.user}>
