@@ -66,9 +66,9 @@ const SignIn = (props) => {
           <div className="sign-in">Sign In</div>
           <form className="sign-in-form" onSubmit={onSignIn}>
             <div className="username-div">
-              <label className="label">Username</label>
+              <label className="username-label">Username</label>
             <input
-                  className="username"
+                  className="sign-in-username"
                   required
                   type="text"
                   name="username"
@@ -78,9 +78,9 @@ const SignIn = (props) => {
               />
             </div>
             <div className="password-div">
-              <label className="label">Password</label>
+              <label className="password-label">Password</label>
             <input
-                  className="password"
+                  className="sign-in-password"
                   required
                   name="password"
                   value={password}
