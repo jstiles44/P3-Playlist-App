@@ -21,8 +21,6 @@ const Profile = (props) => {
     setFavoriteSongs(props.user.playlist.slice());
   }, []);
 
-
-
   const playlistSongsJSX = playlist.map((song, index) => (
     <SongPlaylist
       title={song.title}
@@ -51,14 +49,15 @@ const Profile = (props) => {
     </div>
   );
 
- 
-  const playlistFavoritesJSX = clickSort(favoriteSongs).slice(0, 3).map((song) => (
-    <Favorites
-      title={song.title}
-      artist={song.artist}
-      albumCover={song.albumCover}
-    />
-  ));
+  const playlistFavoritesJSX = clickSort(favoriteSongs)
+    .slice(0, 3)
+    .map((song) => (
+      <Favorites
+        title={song.title}
+        artist={song.artist}
+        albumCover={song.albumCover}
+      />
+    ));
 
   const handleClickAutoplay = () => {
     setAutoPlay(!autoPlay);
@@ -76,11 +75,16 @@ const Profile = (props) => {
     }
   };
 
-
   return (
     <Layout user={props.user}>
       <div className="profile-container">
         <div className="playlist-container">
+          <div className="autoplay-features">
+          <div className="autolabel">AutoPlay{autoPlayButton}</div>
+          <div className="stop-button" onClick={handleClickStop}>
+              Stop
+          </div>
+          </div>
           <div className="playlist-labels">
             <div className="playlist-label-title">Title</div>{" "}
             <div className="playlist-label-artist">Artist</div>{" "}
@@ -88,8 +92,8 @@ const Profile = (props) => {
             <div className="playlist-label-rating">Released</div>
             <div className="playlist-label-delete">Delete</div>
             {/* <div className="playlist-label-play">Play</div> */}
-            <div className="autoButton">{autoPlayButton}</div>
-            <button className="stop" onClick={handleClickStop} />
+            {/* <div className="autoButton">{autoPlayButton}</div>
+            <div className="stop" onClick={handleClickStop}>Stop</div> */}
           </div>
           {loading ? (
             <div className="loading-container">
