@@ -1,11 +1,7 @@
 .image-container{
-  /* margin-top: 255px; */
   display:flex;
   flex-direction: column;
-  /* width: 20vw;
-  padding-top: 60px;
-  padding-left: 20vw; */
-  width: 600px;
+  width: 800px;
   box-shadow: 0 0 3px black;
   border-radius: 20px;
 }
@@ -22,17 +18,13 @@
 .images {
   overflow: hidden;
   display: inline-flex;
-  height: 400px;
-  width: 600px;
+  height: 500px;
+  width: 800px;
   object-fit: cover;
-  /* width: 30vw; */
-  /* padding-left: 50px; */
   align-items: center;
   border-radius: 20px;
-  /* padding-top: 10px; */
 }
 
 .slide img{
   border-radius: 20px;
-
 }

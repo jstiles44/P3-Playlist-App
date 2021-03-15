@@ -17,7 +17,7 @@ const Profile = (props) => {
 
   const { playlist } = props.user;
 
-  const playlistSongsJSX = playlist.map((song) => (
+  const playlistSongsJSX = playlist.map((song,index) => (
     <SongPlaylist
       title={song.title}
       artist={song.artist}
@@ -27,14 +27,11 @@ const Profile = (props) => {
       setUser={props.setUser}
       songLink={song.songLink}
       setSongToPlay={setSongToPlay}
+      playlist={playlist}
+      index={index}
+      user={props.user}
     />
   ));
-
-  // const songPlayerJSX = playlist.map((song) => (
-  //   <div>
-  //     <SongPlayer songLink={song.songLink} />
-  //   </div>
-  // ));
 
   const songPlayerJSX = (
     <div>
@@ -44,7 +41,6 @@ const Profile = (props) => {
 
   const playlistFavoritesJSX = playlist.slice(0, 3).map((song) => (
     <Favorites
-      // id={song._id}
       title={song.title}
       albumCover={song.albumCover}
     />
@@ -81,15 +77,6 @@ const Profile = (props) => {
             <div className="favorites-box">{playlistFavoritesJSX}</div>
           )}
         </div>
-        {/* <div className="analytics-profile">
-          {loading ? (
-            <div className="loading-container">
-              <div className="loader"></div>
-            </div>
-          ) : (
-            <div>test</div>
-          )}
-        </div> */}
         <div className="player-window">
           {loading ? (
             <div className="loading-container">
