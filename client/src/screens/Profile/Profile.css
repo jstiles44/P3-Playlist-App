@@ -39,11 +39,20 @@ grid-template-areas:
 .player-window{
   grid-area: A;
   background-color: #33353C;
-  margin:50px 25px 50px 25px;
+  /* margin:50px 25px 50px 25px; */
   width: 39vw;
   height: 300px;
   box-shadow:  0 0 5px black;
   border-radius: 20px;
+}
+
+.player-cover{
+  grid-area: A;
+  margin:50px 25px 50px 25px;
+  width: 39vw;
+  height: 300px;
+  z-index: 10;
+  pointer-events:none
 }
 
 .loading-container {
@@ -142,6 +151,7 @@ grid-template-areas:
   100% { transform: rotate(360deg); }
 }
 
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -154,4 +164,5 @@ grid-template-areas:
   background: #6f7381; 
   border-radius: 10px;
   height: 50px;
+
 }

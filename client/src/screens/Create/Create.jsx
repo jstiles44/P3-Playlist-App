@@ -28,9 +28,16 @@ const Create = (props) => {
     })
   }
 
+  const songSplice = () => {
+    const equals = song.songLink.indexOf('=');
+    const ampersand = song.songLink.indexOf('&');
+    song.songLink = song.songLink.substring(equals+1, ampersand);
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const created = await createSong(song);
+    song.songLink.includes('youtube.com') ? songSplice() : alert('Song URL must be a valid youtube link');
+    await createSong(song);
     setCreated(true)
   }
 
@@ -61,15 +68,15 @@ const Create = (props) => {
 
           <div>
         <label htmlFor='songLink' className='label'> Link To Song: </label>
-        <input type='text'
-          required
-          name='songLink'
-          value={song.songLink}
-          placeholder='Enter Link To Song'
-          onChange={handleChange} />
+              <input type='text'
+                required
+                name='songLink'
+                value={song.songLink}
+                placeholder='Enter Link To Song'
+                onChange={handleChange} />
           </div>
           
-        <div> 
+        <div>  
         <label htmlFor='songLength' className='label'> Song Length: </label>
         <input type='text'
           required
@@ -86,7 +93,7 @@ const Create = (props) => {
           name='artist'
           value={song.artist}
           placeholder='Artist Name:'
-            onChange={handleChange} />
+          onChange={handleChange} />
         </div>
 
         <div>

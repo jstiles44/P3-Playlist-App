@@ -63,3 +63,14 @@
   color: rgb(0, 217, 255);
   transition: .5s;
 } */
+
+::-webkit-scrollbar-thumb {
+  background: #232020;
+  
+  border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #464749;
+}
