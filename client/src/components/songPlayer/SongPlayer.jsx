@@ -13,9 +13,9 @@ const SongPlayer = (props) => {
         width="358.72"
         height="300"
         src={`https://www.youtube.com/embed/${props.songToPlay}?autoplay=1`}
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
     </div>
   );

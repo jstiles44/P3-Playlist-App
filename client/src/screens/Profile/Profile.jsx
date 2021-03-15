@@ -4,12 +4,13 @@ import SongPlayer from "../../components/songPlayer/SongPlayer";
 import { useState, useEffect } from "react";
 import "./Profile.css";
 import Favorites from "../../components/playlist/Favorites";
-import {clickSort} from "../../utils/sort"
+import { clickSort } from "../../utils/sort";
 
 const Profile = (props) => {
   const [loading, setLoading] = useState(true);
   const [songToPlay, setSongToPlay] = useState();
-  const [favoriteSongs, setFavoriteSongs] = useState([])
+  const [favoriteSongs, setFavoriteSongs] = useState([]);
+  const [autoPlay, setAutoPlay] = useState(false);
 
   const { playlist } = props.user;
 
@@ -17,13 +18,11 @@ const Profile = (props) => {
     setTimeout(() => {
       setLoading(false);
     }, 1500);
-    setFavoriteSongs(props.user.playlist.slice())
+    setFavoriteSongs(props.user.playlist.slice());
   }, []);
 
 
-
-
-  const playlistSongsJSX = playlist.map((song,index) => (
+  const playlistSongsJSX = playlist.map((song, index) => (
     <SongPlaylist
       title={song.title}
       artist={song.artist}
@@ -41,6 +40,7 @@ const Profile = (props) => {
       playlist={playlist}
       index={index}
       user={props.user}
+      autoPlay={autoPlay}
     />
   ));
 
@@ -50,13 +50,27 @@ const Profile = (props) => {
     </div>
   );
 
+  const playlistFavoritesJSX = clickSort(favoriteSongs)
+    .slice(0, 3)
+    .map((song) => (
+      <Favorites title={song.title} albumCover={song.albumCover} />
+    ));
 
-  const playlistFavoritesJSX = clickSort(favoriteSongs).slice(0, 3).map((song) => (
-    <Favorites
-      title={song.title}
-      albumCover={song.albumCover}
-    />
-  ));
+  const handleClickAutoplay = () => {
+    setAutoPlay(!autoPlay);
+    setSongToPlay();
+  };
+
+  const autoPlayButton = (
+    <input type="checkbox" value="false" onClick={handleClickAutoplay} />
+  );
+
+  const handleClickStop = () => {
+    setSongToPlay();
+    if (autoPlay === true) {
+      window.location.reload(false);
+    }
+  };
 
   return (
     <Layout user={props.user}>
@@ -69,6 +83,8 @@ const Profile = (props) => {
             <div className="playlist-label-rating">Released</div>
             <div className="playlist-label-delete">Delete</div>
             {/* <div className="playlist-label-play">Play</div> */}
+            <div className="autoButton">{autoPlayButton}</div>
+            <button className="stop" onClick={handleClickStop} />
           </div>
           {loading ? (
             <div className="loading-container">
@@ -89,15 +105,29 @@ const Profile = (props) => {
             <div className="favorites-box">{playlistFavoritesJSX}</div>
           )}
         </div>
-        <div className="player-window">
-          {loading ? (
-            <div className="loading-container">
-              <div className="loader"></div>
+        {autoPlay ? (
+          <div className="player-cover">
+            <div className="player-window">
+              {loading ? (
+                <div className="loading-container">
+                  <div className="loader"></div>
+                </div>
+              ) : (
+                <div className="songPlayer">{songPlayerJSX}</div>
+              )}
             </div>
-          ) : (
-            <div className="songPlayer">{songPlayerJSX}</div>
-          )}
-        </div>
+          </div>
+        ) : (
+          <div className="player-window">
+            {loading ? (
+              <div className="loading-container">
+                <div className="loader"></div>
+              </div>
+            ) : (
+              <div className="songPlayer">{songPlayerJSX}</div>
+            )}
+          </div>
+        )}
       </div>
     </Layout>
   );
