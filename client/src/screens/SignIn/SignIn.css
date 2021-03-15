@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   
 }
 
@@ -41,26 +41,14 @@
   margin-bottom: 10px;
   position: relative;
   top: -5px;
-  right: 35px;
 }
 
 .password-div{
   margin-bottom: 10px;
   position: relative;
   top: -5px;
-  right: 35px;
 }
 
-/* .sign-in-button{
-  border-radius: 10px;
-  background-color: #73D499;
-  width: 100px;
-  height: 30px;
-  margin-top: 10px;
-  position: relative;
-  font-family: "Lato", sans-serif;
-  top: -5px;
-} */
 
 /* based on https://codepen.io/RazorXio/pen/gMaoOW */
 .sign_in_button_slide{
@@ -94,22 +82,26 @@
 }
 
 
+.username-label{
+  margin-right: 5px;
+  margin-left: -5px;
 
-.label{
-  font-size: small;
+}
+
+.password-label{
   margin-right: 5px;
 }
 
-.password{
-  position: relative;
-  left: 2px;
+.sign-in-password{
   height: 20px;
-
+  width: 200px;
 }
 
-.username{
+.sign-in-username{
   height: 20px;
+  width: 200px;
 }
+
 
 
 
