@@ -17,7 +17,7 @@
   margin: 10px;
   padding: 50px;
   width: 300px;
-  height: 300px;
+  height: 400px;
   border-radius: 20px;
   font-family: "Lato", sans-serif;
   display: grid;
@@ -70,6 +70,7 @@
 
 .button-container{
   position: absolute;
+  margin-top: 85px;
 }
 
 
@@ -113,5 +114,6 @@
 }
 
 .reviews-wrapper{
-  position: relative;
+  position: absolute;
+  margin-top: 260px;
 }
