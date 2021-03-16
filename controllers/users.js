@@ -41,7 +41,6 @@ const signIn = async (req, res) => {
       const payload = {
         username: user.username,
         email: user.email,
-        playlist: user.playlist,
         id: user._id
       }
 
@@ -63,7 +62,6 @@ const verify =  async (req, res) => {
     const newPayload = {
       username: user.username,
       email: user.email,
-      playlist: user.playlist,
       id: user._id
     }
       if(payload) {
@@ -84,13 +82,7 @@ const addSong = async (req, res) => {
     const song = await Song.findById(req.body._id)
     user.playlist.push(song)
     await user.save()
-    const userPayload = { 
-      username: user.username,
-      email: user.email,
-      playlist: user.playlist,
-      id: user._id
-  }
-    res.json(userPayload)
+    res.json(user.playlist)
   } catch (error) {
     res.status(500).json({ error: error.message })
   }
@@ -176,7 +168,6 @@ const addClick = async (req, res) => {
       const userPayload = {
         username: user.username,
         email: user.email,
-        playlist: user.playlist,
         id: user._id
       }
       res.json(userPayload)
@@ -199,17 +190,21 @@ const deleteSong = async (req, res) => {
     
     user.playlist = userPlaylist
     await user.save()
-    const userPayload = {
-      username: user.username,
-      email: user.email,
-      playlist: user.playlist,
-      id: user._id
-    }
-    res.json(userPayload)
+    res.json(user.playlist)
   } catch (error) {
     res.status(500).json({ error: error.message })
   }
 }
+
+const getPlaylist = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    const playlist = user.playlist
+    res.json(playlist)
+  } catch (error) {
+  }
+}
+
   
   module.exports = {
     signUp,
@@ -218,5 +213,6 @@ const deleteSong = async (req, res) => {
     changePassword,
     addSong,
     deleteSong,
-    addClick
+    addClick,
+    getPlaylist,
 }

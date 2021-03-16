@@ -16,7 +16,6 @@ const Details = (props) => {
   })
   const { id } = useParams();
   const [isLoaded, setLoaded] = useState(false);
-  const history = useHistory()
 
   useEffect(() => {
     const fetchSong = async () => {
@@ -50,7 +49,7 @@ const Details = (props) => {
   const addToPlaylist = async () => {
     const response = await addSong(props.user.id, song);
     alert('Song added to playlist!')
-    props.setUser(response);
+    props.setPlaylist(response);
   };
 
   const preventAdd = () => {
@@ -74,7 +73,7 @@ const Details = (props) => {
       <button
         className="button_slide slide_right"
         onClick={
-          props.user.playlist.find((songPlaylist) => {
+          props.playlist.find((songPlaylist) => {
             return songPlaylist._id === song._id;
           })
             ? preventAdd

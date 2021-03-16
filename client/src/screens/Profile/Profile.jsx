@@ -12,16 +12,15 @@ const Profile = (props) => {
   const [favoriteSongs, setFavoriteSongs] = useState([]);
   const [autoPlay, setAutoPlay] = useState(false);
 
-  const { playlist } = props.user;
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 1500);
-    setFavoriteSongs(props.user.playlist.slice());
-  }, []);
+    setFavoriteSongs(props.playlist.slice());
+  }, [props.playlist]);
 
-  const playlistSongsJSX = playlist.map((song, index) => (
+  const playlistSongsJSX = props.playlist.map((song, index) => (
     <SongPlaylist
       title={song.title}
       artist={song.artist}
@@ -33,10 +32,10 @@ const Profile = (props) => {
       genre={song.genre}
       songId={song._id}
       userId={props.user.id}
-      setUser={props.setUser}
+      setPlaylist={props.setPlaylist}
       songLink={song.songLink}
       setSongToPlay={setSongToPlay}
-      playlist={playlist}
+      playlist={props.playlist}
       index={index}
       user={props.user}
       autoPlay={autoPlay}
@@ -85,7 +84,7 @@ const Profile = (props) => {
           <div className="autoplay-features">
           <div className="autolabel">AutoPlay{autoPlayButton}</div>
           <div className="stop-button" onClick={handleClickStop}>
-              Stop
+              Stop Music
           </div>
           </div>
           <div className="playlist-labels">

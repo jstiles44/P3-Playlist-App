@@ -2,7 +2,7 @@
   height: 100vh;
   display: flex;
   background-color: #454851;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .home-carousels{
@@ -16,7 +16,7 @@
   margin: 10px;
   box-shadow: 0 0 3px black;
   border-radius: 20px;
-  margin-top: -20px;
+  margin-top: -110px;
 }
 
 .home-carousel-songs2{
@@ -36,12 +36,13 @@
 
 .welcome-text{
   font-family: 'Fredoka One', cursive;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 400;
   color: #FCEFF9;
   text-align: center;
   margin-bottom: 30px;
-  margin-top: 20px;
+  margin-top: -30px;
+  line-height: 1;
 }
 
 @media only screen and (max-width: 1220px) {

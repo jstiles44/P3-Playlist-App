@@ -10,27 +10,41 @@ import { verifyUser } from './services/users'
 import { Route, Switch, Redirect } from "react-router-dom"
 import { useState, useEffect } from "react"
 import Create from './screens/Create/Create.jsx'
+import { getPlaylist } from "./services/users"
 
 
 function App() {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [playlist, setPlaylist] = useState([])
 
   useEffect(() => {
     const fetchUser = async () => {
       const user = await verifyUser()
       user ? setUser(user) : setUser(null)
+      const response = await getPlaylist(user.id)
+      setPlaylist(response)
     }
     fetchUser()
+
+    // const fetchPlaylist = async () => {
+    //   const response = await getPlaylist(user._id)
+    //   setPlaylist(response.data)
+    // }
+    // fetchPlaylist()
   }, [])
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
     }, 500)
-  })
+  },)
 
-  const clearUser = () => setUser(null)
+  const clearUser = () => {
+    setUser(null)
+    setPlaylist(null)
+    localStorage.clear()
+  }
   return (
     <div className="App">
       {loading ? (<div className="main-loading-container">
@@ -41,10 +55,10 @@ function App() {
             <Home user={user} />
           </Route>
           <Route exact path="/sign-up">
-            <SignUp setUser={setUser} />
+            <SignUp setUser={setUser} setPlaylist={setPlaylist}/>
           </Route>
           <Route exact path="/sign-in">
-            <SignIn setUser={setUser} />
+            <SignIn setUser={setUser} setPlaylist={setPlaylist}/>
           </Route>
           <Route exact path="/sign-out">
             <SignOut setUser={setUser} clearUser={clearUser} />
@@ -53,10 +67,10 @@ function App() {
             <Explore user={user} />
           </Route>
           <Route exact path="/explore/:id">
-            {user ? <Details user={user} setUser={setUser}/> : <Redirect to="/sign-up" />}
+            {user ? <Details user={user} setPlaylist={setPlaylist} playlist={playlist}/> : <Redirect to="/sign-up" />}
           </Route>
           <Route exact path="/profile">
-            {user ? <Profile user={user} setUser={setUser}/> : <Redirect to="/sign-up" />}
+            {user ? <Profile user={user} setPlaylist={setPlaylist} playlist={playlist}/> : <Redirect to="/sign-up" />}
           </Route>
           <Route exact path="/create">
             {user ? <Create user={user} setUser={setUser}/> : <Redirect to="/sign-up" />}

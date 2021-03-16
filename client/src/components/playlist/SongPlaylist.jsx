@@ -7,9 +7,10 @@ import {editSong} from "../../services/songs"
 
 const SongPlaylist = (props) => {
   const deleteFromPlaylist = async () => {
-    console.log(props.userId, props.songId);
+    // console.log(props.userId, props.songId);
     const response = await deleteSong(props.userId, props.songId);
-    props.setUser(response);
+    console.log(response)
+    props.setPlaylist(response);
   };
 
   const play = (e) => {
