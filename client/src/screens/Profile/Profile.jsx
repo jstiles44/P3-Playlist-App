@@ -28,7 +28,7 @@ const Profile = (props) => {
       songLength={song.songLength}
       userClicks={song.userClicks}
       album={song.album}
-      albumCover={song.albumCover}
+      imgURL={song.imgURL}
       releaseYear={song.releaseYear}
       genre={song.genre}
       songId={song._id}
@@ -40,6 +40,7 @@ const Profile = (props) => {
       index={index}
       user={props.user}
       autoPlay={autoPlay}
+      key={index}
     />
   ));
 
@@ -50,12 +51,13 @@ const Profile = (props) => {
   );
 
   const playlistFavoritesJSX = clickSort(favoriteSongs)
-    .slice(0, 3)
-    .map((song) => (
+    .slice(0, 6)
+    .map((song, index) => (
       <Favorites
         title={song.title}
         artist={song.artist}
-        albumCover={song.albumCover}
+        imgURL={song.imgURL}
+        key={index}
       />
     ));
 
@@ -79,6 +81,7 @@ const Profile = (props) => {
     <Layout user={props.user}>
       <div className="profile-container">
         <div className="playlist-container">
+          <div className="playlist-header">
           <div className="autoplay-features">
           <div className="autolabel">AutoPlay{autoPlayButton}</div>
           <div className="stop-button" onClick={handleClickStop}>
@@ -94,7 +97,8 @@ const Profile = (props) => {
             {/* <div className="playlist-label-play">Play</div> */}
             {/* <div className="autoButton">{autoPlayButton}</div>
             <div className="stop" onClick={handleClickStop}>Stop</div> */}
-          </div>
+            </div>
+            </div>
           {loading ? (
             <div className="loading-container">
               <div className="loader"></div>

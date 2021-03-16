@@ -16,6 +16,7 @@ const Details = (props) => {
   })
   const { id } = useParams();
   const [isLoaded, setLoaded] = useState(false);
+  const history = useHistory()
 
   useEffect(() => {
     const fetchSong = async () => {
@@ -90,11 +91,11 @@ const Details = (props) => {
       <div className="song-details">
         <img
           className="details-album-art"
-          src={song.albumCover}
+          src={song.imgURL}
           alt={"album art for this song"}
         />
         <div className="detail">
-          <div classname="text">
+          <div className="text">
             <div className="title">{song.title}</div>
             <div className="artist">by {song.artist}</div>
             <div className="album">from the album {song.album}</div>

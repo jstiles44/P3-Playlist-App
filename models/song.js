@@ -7,7 +7,7 @@ const Song = new Schema(
     artist: { type: String, required: true },
     releaseYear: { type: String, required: true },
     genre: { type: String, required: true },
-    albumCover: { type: String, required: true },
+    imgURL: { type: String, required: true },
     album: {type: String, required: true},
     songLength: { type: String, required: true },
     songLink: { type: String, required: true },

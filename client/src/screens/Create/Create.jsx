@@ -11,7 +11,7 @@ const Create = (props) => {
     releaseYear: "",
     genre: "",
     album: "",
-    albumCover: "",
+    imgURL: "",
     songLink: "",
     songLength: "",
   });
@@ -138,7 +138,7 @@ const Create = (props) => {
                   className="create-inputs"
                   required
                   name="albumCover"
-                  value={song.albumCover}
+                  value={song.imgURL}
                   placeholder="Enter Link"
                   onChange={handleChange}
                 />
