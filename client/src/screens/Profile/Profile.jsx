@@ -28,7 +28,7 @@ const Profile = (props) => {
       songLength={song.songLength}
       userClicks={song.userClicks}
       album={song.album}
-      albumCover={song.albumCover}
+      imgURL={song.imgURL}
       releaseYear={song.releaseYear}
       genre={song.genre}
       songId={song._id}
@@ -40,6 +40,7 @@ const Profile = (props) => {
       index={index}
       user={props.user}
       autoPlay={autoPlay}
+      key={index}
     />
   ));
 
@@ -51,11 +52,12 @@ const Profile = (props) => {
 
   const playlistFavoritesJSX = clickSort(favoriteSongs)
     .slice(0, 6)
-    .map((song) => (
+    .map((song, index) => (
       <Favorites
         title={song.title}
         artist={song.artist}
-        albumCover={song.albumCover}
+        imgURL={song.imgURL}
+        key={index}
       />
     ));
 

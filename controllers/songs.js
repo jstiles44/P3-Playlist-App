@@ -62,7 +62,7 @@ const updateListen = async (req, res) => {
       "artist": song.artist,
       "releaseYear": song.releaseYear,
       "genre": song.genre,
-      "albumCover": song.albumCover,
+      "imgURL": song.albumCover,
       "album": song.album,
       "songLength": song.songLength,
       "songLink": song.songLink,

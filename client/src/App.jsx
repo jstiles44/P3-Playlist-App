@@ -56,10 +56,10 @@ function App() {
             {user ? <Details user={user} setUser={setUser}/> : <Redirect to="/sign-up" />}
           </Route>
           <Route exact path="/profile">
-            <Profile user={user} setUser={setUser}/>
+            {user ? <Profile user={user} setUser={setUser}/> : <Redirect to="/sign-up" />}
           </Route>
           <Route exact path="/create">
-            <Create user={user} setUser={setUser}/>
+            {user ? <Create user={user} setUser={setUser}/> : <Redirect to="/sign-up" />}
           </Route>
         </Switch>
       }

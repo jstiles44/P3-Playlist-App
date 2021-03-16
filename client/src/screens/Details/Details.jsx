@@ -91,7 +91,7 @@ const Details = (props) => {
       <div className="song-details">
         <img
           className="details-album-art"
-          src={song.albumCover}
+          src={song.imgURL}
           alt={"album art for this song"}
         />
         <div className="detail">
