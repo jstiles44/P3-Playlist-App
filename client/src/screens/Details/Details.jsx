@@ -97,8 +97,8 @@ const Details = (props) => {
         <div className="detail">
           <div className="text">
             <div className="title">{song.title}</div>
-            <div className="artist">by {song.artist}</div>
-            <div className="album">from the album {song.album}</div>
+            <div className="artist">{song.artist}</div>
+            <div className="album">Album: {song.album}</div>
             <div className="genre">Genre: {song.genre}</div>
             <div className="release-year">Release Year: {song.releaseYear}</div>
             <div className="song-length">Length: {song.songLength}</div>

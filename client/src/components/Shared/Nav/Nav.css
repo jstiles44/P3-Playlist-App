@@ -59,4 +59,20 @@ nav :last-child{
   padding-right: 15px;
 }
 
+@media screen and (max-width: 1100px) {
+  
+  .link {
+    font-size: 20px;
+  }
+
+  .logo {
+    font-size: 30px;
+    padding-top: 23px;
+  }
+
+  nav :last-child {
+    padding-right: 25px;
+  }
+}
+
 
