@@ -50,7 +50,7 @@ const Profile = (props) => {
   );
 
   const playlistFavoritesJSX = clickSort(favoriteSongs)
-    .slice(0, 3)
+    .slice(0, 6)
     .map((song) => (
       <Favorites
         title={song.title}
@@ -79,6 +79,7 @@ const Profile = (props) => {
     <Layout user={props.user}>
       <div className="profile-container">
         <div className="playlist-container">
+          <div className="playlist-header">
           <div className="autoplay-features">
           <div className="autolabel">AutoPlay{autoPlayButton}</div>
           <div className="stop-button" onClick={handleClickStop}>
@@ -94,7 +95,8 @@ const Profile = (props) => {
             {/* <div className="playlist-label-play">Play</div> */}
             {/* <div className="autoButton">{autoPlayButton}</div>
             <div className="stop" onClick={handleClickStop}>Stop</div> */}
-          </div>
+            </div>
+            </div>
           {loading ? (
             <div className="loading-container">
               <div className="loader"></div>
