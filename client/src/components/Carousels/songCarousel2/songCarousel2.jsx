@@ -15,7 +15,7 @@ const SongCarousel2 = (props) => {
       showIndicators={false}
       >
         {props.topRated.map((song, index) => (
-          <div height='100%' key={index}>
+          <div height='100%' key={index} className='album-art'>
             <Link to={`/explore/${song._id}`}>
             <img height='200px' width='25px' src={song.imgURL} alt={song.imgURL}
               className='album-art' />

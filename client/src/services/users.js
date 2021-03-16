@@ -76,3 +76,12 @@ export const addClick = async (id, song) => {
     throw error
   }
 }
+
+export const getPlaylist = async (id) => {
+  try {
+    const response = await api.get(`/${id}/playlist`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}

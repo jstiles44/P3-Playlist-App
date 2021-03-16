@@ -32,7 +32,7 @@ const Home = (props) => {
         <div className="home-carousels">
           <div className="home-text-images">
             <div className="welcome-text">
-              Welcome to SongYou, where your music experience is built for you and by you
+            Welcome to SongYou, where your music experience is built for you and by you
             </div>
             <ImageCarousel />
           </div>
