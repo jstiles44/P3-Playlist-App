@@ -1,0 +1,13 @@
+.embeddedPlayer{
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+  width: 39vw;
+  height: 300px;
+}
+
+@media only screen and (max-width: 1220px) {
+  .embeddedPlayer{
+    width: 80vw;
+  }
+}

@@ -18,3 +18,35 @@ export const getSong = async (id) => {
   }
 }
 
+
+export const updateSong = async (id, song) => {
+  try {
+      const response = await api.put(`/songs/${id}`, song)
+      return response.data
+  } catch (error) {
+      throw error
+  }
+
+}
+
+export const createSong = async (song) => {
+  try {
+      const response = await api.post(`/songs`, song)
+      return response.data
+  } catch (error) {
+      throw error
+  }
+
+}
+
+export const editSong = async (id) => {
+  try {
+    const response = await api.patch(`/songs/${id}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
+
+

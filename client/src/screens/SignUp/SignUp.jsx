@@ -3,6 +3,7 @@ import './SignUp.css'
 import { signUp, signIn } from '../../services/users'
 import { useHistory } from "react-router-dom"
 import Layout from "../../components/Shared/layout/Layout"
+import { getPlaylist } from "../../services/users"
 
 const SignUp = (props) => {
 
@@ -31,7 +32,14 @@ const SignUp = (props) => {
 
         signUp(form)
             .then(() => signIn(form))
-            .then(user => setUser(user))
+            .then(user => {
+              setUser(user)
+              return user
+            })
+          .then(async (user) => {
+            const playlist = await getPlaylist(user.id)
+            props.setPlaylist(playlist)
+          })
             .then(() => history.push('/'))
             .catch(error => {
                 console.error(error)
@@ -69,7 +77,7 @@ const SignUp = (props) => {
                 <div className="sign-up-username-div">
                 <label className="label">Username</label>
             <input
-                    className="username"
+                    className="sign-up-username"
                     required
                     type="text"
                     name="username"
@@ -93,7 +101,7 @@ const SignUp = (props) => {
             <div className="sign-up-password-div">
                 <label className="label">Password</label>
             <input
-                    className="password"
+                    className="sign-up-password"
                     required
                     name="password"
                     value={password}

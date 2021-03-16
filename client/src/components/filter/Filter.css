@@ -1,6 +1,6 @@
-.filter-input {
+.filter-input-explore {
   height: 30px;
-  width: 25vw;
+  min-width: 25vw;
   font-size: 20px;
   padding-left: 15px;
 }

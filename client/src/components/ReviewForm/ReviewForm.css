@@ -1,0 +1,30 @@
+.rating-sort{
+  background-color: #33353c;
+  border-color: #33353c;
+  color: white;
+  font-size: 20px;
+  width: 200px;
+} 
+
+.rating-submit{
+  background-color: #73d499;
+  color: black;
+  background-color: #73d499;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
+  transition: ease-out 0.5s;
+  margin-left: 10px;
+  width: 80px;
+  height: 40px;
+}
+
+.index__on___2g4jr {
+  color: gold !important;
+}

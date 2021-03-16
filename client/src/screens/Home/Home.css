@@ -1,6 +1,77 @@
 .home-body{
+  height: 100vh;
   display: flex;
-  height: 45vw;
   background-color: #454851;
-  padding-top: 20px;
+  padding-top: 30px;
+}
+
+.home-carousels{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-carousel-songs{
+  margin: 10px;
+  box-shadow: 0 0 3px black;
+  border-radius: 20px;
+  margin-top: -110px;
+}
+
+.home-carousel-songs2{
+  margin: 10px;
+  box-shadow: 0 0 3px black;
+  border-radius: 20px;
+  margin-top: 30px
+}
+
+.home-text-images{
+  height: 670px;
+  width: 800px;
+  margin-right: 130px;
+  margin-bottom: 80px;
+  border-radius: 20px;
+}
+
+.welcome-text{
+  font-family: 'Fredoka One', cursive;
+  font-size: 50px;
+  font-weight: 400;
+  color: #FCEFF9;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -30px;
+  line-height: 1;
+}
+
+@media only screen and (max-width: 1220px) {
+  
+  .home-body{
+    height: 1500px;
+    padding: 0;
+  }
+
+  .welcome-text {
+    margin: 0;
+  }
+
+  .home-carousels{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-text-images{
+    grid-area: T;
+    height: 670px;
+    width: 800px;
+    border-radius: 20px;
+    margin: 0 0 20px 0;
+  }
+  .songCarousels {
+    grid-area: C;
+    width: 270px;
+    margin: 0;
+  }
 }

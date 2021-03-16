@@ -1,9 +1,9 @@
 .image-container{
   display:flex;
   flex-direction: column;
-  width: 20vw;
-  padding-top: 60px;
-  padding-left: 20vw;
+  width: 800px;
+  box-shadow: 0 0 3px black;
+  border-radius: 20px;
 }
 
 .tagline{
@@ -16,12 +16,13 @@
 }
 
 .images {
+  overflow: hidden;
   display: inline-flex;
-  width: 30vw;
-  padding-left: 50px;
-  justify-content: center;
+  height: 500px;
+  width: 800px;
+  object-fit: cover;
+  align-items: center;
   border-radius: 20px;
-  padding-top: 10px;
 }
 
 .slide img{

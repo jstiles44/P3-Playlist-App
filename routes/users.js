@@ -6,8 +6,10 @@ const router = Router()
 router.post('/sign-up', controllers.signUp)
 router.post('/sign-in', controllers.signIn)
 router.get('/verify', controllers.verify)
+router.get('/:id/playlist', controllers.getPlaylist)
 router.post('/change-password', controllers.changePassword)
 router.patch('/:id/songs', controllers.addSong)
 router.patch('/:id/playlist', controllers.deleteSong)
+router.patch('/:id/click', controllers.addClick)
 
 module.exports = router

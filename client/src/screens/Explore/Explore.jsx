@@ -51,7 +51,7 @@ const Explore = (props) => {
   }
 
   const songsJSX = queriedSongs.map((song, index) => (
-    <Song title={song.title} _id={song._id} albumCover={song.albumCover} artist={song.artist} key={index}/>
+    <Song title={song.title} _id={song._id} imgURL={song.imgURL} artist={song.artist} key={index}/>
 
   ))
 

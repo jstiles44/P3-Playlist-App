@@ -45,6 +45,42 @@ const updateSong = async (req, res) => {
     if (!song) {
       return res.status(404).json({ message: 'Song not found!'})
     }
+    console.log("reviews", song)
+    res.status(200).json(song)
+  })
+}
+
+
+const updateListen = async (req, res) => {
+  console.log("request body", req.params)
+  let song = await Song.findById(req.params.id)
+  console.log("song before logic", song)
+
+  updatedSong = {
+      "_id": song._id,
+      "title": song.title,
+      "artist": song.artist,
+      "releaseYear": song.releaseYear,
+      "genre": song.genre,
+      "imgURL": song.imgURL,
+      "album": song.album,
+      "songLength": song.songLength,
+      "songLink": song.songLink,
+      "userClicks": song.userClicks,
+      "globalListens": song.globalListens + 1,
+      "reviews": song.reviews,
+  }
+
+  song = updatedSong
+  console.log("updated song after logic", song)
+  
+  await Song.findByIdAndUpdate(req.params.id, song, { new: true }, (error, song) => {
+    if (error) {
+      return res.status(500).json({ error: error.message })
+    }
+    if (!song) {
+      return res.status(404).json({ message: 'Song not found!'})
+    }
     res.status(200).json(song)
   })
 }
@@ -80,5 +116,6 @@ module.exports = {
   getSongs,
   getSong,
   updateSong,
-  deleteSong
+  deleteSong,
+  updateListen
 }

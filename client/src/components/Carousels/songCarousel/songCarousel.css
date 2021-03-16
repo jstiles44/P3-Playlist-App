@@ -1,14 +1,13 @@
 .recently-added {
-  width: 30vw;
   display: inline-flex;
-  height: 400px;
+  height: 320px;
+  width: 250px;
   flex-direction: column;
-  justify-items: center;
-  color: #73D499;
+  /* justify-items: center; */
+  color: white;
   background-color: #33353C;
   border-radius: 20px;
-  margin-top: 30px;
-  margin-left: 5vw;
+  font-size: 12px;
   font-family: "Lato", sans-serif;
 }
 
@@ -48,14 +47,25 @@ button{
 
 .album-title, .artist{
   background-color: transparent;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  width: 200px;
+
 }
 .album-title{
-  padding-top: 10px;
-  z-index: 1;
+  padding-top: 5px;
+  /* z-index: 1; */
+  /* margin-top: 10px; */
 }
 
 .artist{
-  z-index: 1;
-  padding-top: 10px;
+  /* z-index: 1; */
+  /* padding-top: 10px; */
   padding-bottom: 5px;
+  font-size: 18px;
+}
+
+.album-art {
+  width: 200px;
 }

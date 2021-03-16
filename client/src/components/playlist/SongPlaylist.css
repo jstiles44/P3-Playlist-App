@@ -5,6 +5,10 @@
   align-items: center;
   padding: 0 5px 0 5px;
 }
+.playlist-song:hover {
+  background-color: #454851;
+  cursor: pointer;
+}
 
 .playlist-song-title {
   width: 40%;
@@ -21,7 +25,7 @@
 .playlist-song-length {
   color: white;
   font-size: 15px;
-  width: 12%;
+  width: 11%;
 }
 
 .playlist-song-rating {
@@ -33,7 +37,7 @@
 .playlist-song-delete {
   color: #73d499;
   font-size: 15px;
-  width: 4%;
+  width: 6%;
   font-weight: bold;
   text-align: center;
   transition: .5s;
@@ -43,4 +47,30 @@
   transform: scale(1.50);
   color: red;
   transition: .5s;
+}
+
+/* .playlist-song-play {
+  color: #73d499;
+  font-size: 15px;
+  width: 6%;
+  font-weight: bold;
+  text-align: center;
+  transition: .5s;
+} */
+
+/* .playlist-song-play:hover {
+  transform: scale(1.50);
+  color: rgb(0, 217, 255);
+  transition: .5s;
+} */
+
+::-webkit-scrollbar-thumb {
+  background: #232020;
+  
+  border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #464749;
 }

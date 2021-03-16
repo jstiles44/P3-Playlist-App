@@ -41,7 +41,6 @@ const signIn = async (req, res) => {
       const payload = {
         username: user.username,
         email: user.email,
-        playlist: user.playlist,
         id: user._id
       }
 
@@ -55,17 +54,23 @@ const signIn = async (req, res) => {
   }
 }
 
-  const verify =  async (req, res) => {
-    try {
-        const token = req.headers.authorization.split(" ")[1]
-        const payload = jwt.verify(token, TOKEN_KEY)
-        if(payload) {
-            res.json(payload)
-        }
-    } catch (e) {
-        res.status(401).send('Not Authorized')
+const verify =  async (req, res) => {
+  try {
+    const token = req.headers.authorization.split(" ")[1]
+    const payload = jwt.verify(token, TOKEN_KEY)
+    const user = await User.findOne({ username: payload.username })
+    const newPayload = {
+      username: user.username,
+      email: user.email,
+      id: user._id
     }
+      if(payload) {
+          res.json(newPayload)
+      }
+  } catch (e) {
+      res.status(401).send('Not Authorized')
   }
+}
 
 const changePassword = async (req, res) => { }
 
@@ -74,48 +79,132 @@ const changePassword = async (req, res) => { }
 const addSong = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
-    console.log(req.body._id)
     const song = await Song.findById(req.body._id)
     user.playlist.push(song)
-    console.log(user)
     await user.save()
-    const userPayload = { 
-      username: user.username,
-      email: user.email,
-      playlist: user.playlist,
-      id: user._id
-  }
-    res.json(userPayload)
+    res.json(user.playlist)
   } catch (error) {
     res.status(500).json({ error: error.message })
   }
 }
 
+// const addClick = async (req, res) => {
+//   try {
+//     const user = await User.findById(req.params.id)
+//     const songClicked = await Song.findById(req.body.song)
+//     console.log("before adding song", user.playlist)
+
+//     const updatedSong = user.playlist.find((song) => {
+//       if (song._id.equals(songClicked._id)) {
+//         console.log("song in playlist", song)
+//         return {
+//           "title": song.title,
+//           "artist": song.artist,
+//           "releaseYear": song.releaseYear,
+//           "genre": song.genre,
+//           "albumCover": song.albumCover,
+//           "album": song.album,
+//           "songLength": song.songLength,
+//           "songLink": song.songLink,
+//           "userClicks": song.userClicks++
+//         } 
+//           return song
+//       }
+//     })
+  
+//     await user.save()
+//     console.log("after pushing song", user.playlist)
+//     const userPayload = {
+//       username: user.username,
+//       email: user.email,
+//       playlist: user.playlist,
+//       id: user._id
+//     }
+//     res.json(userPayload)
+//   } catch (error) {
+//     res.status(500).json({ error: error.message })
+//   }
+// }
+
+const addClick = async (req, res) => {
+  try {
+  const user = await User.findById(req.params.id)
+  const songClicked = await Song.findById(req.body.song)
+ const userPlaylist = []
+
+    user.playlist.map((song) => {
+      // console.log(song)
+      (song._id.equals(songClicked._id)) ? userPlaylist.push(
+        {
+          "_id": song._id,
+          "title": song.title,
+          "artist": song.artist,
+          "releaseYear": song.releaseYear,
+          "genre": song.genre,
+          "imgURL": song.imgURL,
+          "album": song.album,
+          "songLength": song.songLength,
+          "songLink": song.songLink,
+          "userClicks": song.userClicks + 1
+        }) : userPlaylist.push({
+          "_id": song._id,
+          "title": song.title,
+          "artist": song.artist,
+          "releaseYear": song.releaseYear,
+          "genre": song.genre,
+          "imgURL": song.imgURL,
+          "album": song.album,
+          "songLength": song.songLength,
+          "songLink": song.songLink,
+          "userClicks": song.userClicks
+        })
+    })
+      
+
+
+    user.playlist = userPlaylist
+
+    await user.save()
+      const userPayload = {
+        username: user.username,
+        email: user.email,
+        id: user._id
+      }
+      res.json(userPayload)
+    } catch (error) {
+      res.status(500).json({ error: error.message })
+    }
+  }
+
+
+
+
 const deleteSong = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
-    console.log(req.body.song)
     const downSong = await Song.findById(req.body.song)
+
     const userPlaylist = user.playlist.filter(song => {
       return !song._id.equals(downSong._id)
     })
-    // const song = await User.playlist.findById({_id:req.body._id})
-  //  console.log(userPlaylist)
+    
     user.playlist = userPlaylist
-    console.log(user.playlist)
     await user.save()
-    const userPayload = { 
-      username: user.username,
-      email: user.email,
-      playlist: user.playlist,
-      id: user._id
-    }
-    console.log(userPayload)
-    res.json(userPayload)
+    res.json(user.playlist)
   } catch (error) {
     res.status(500).json({ error: error.message })
   }
 }
+
+const getPlaylist = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    const playlist = user.playlist
+    res.json(playlist)
+  } catch (error) {
+  }
+}
+
   
   module.exports = {
     signUp,
@@ -123,5 +212,7 @@ const deleteSong = async (req, res) => {
     verify,
     changePassword,
     addSong,
-    deleteSong
+    deleteSong,
+    addClick,
+    getPlaylist,
 }

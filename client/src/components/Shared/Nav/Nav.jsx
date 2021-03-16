@@ -6,6 +6,9 @@ const authenticatedOptions = (
     <NavLink className="link" to="/profile">
       Profile
     </NavLink>
+    <NavLink className='link' to='/create'>
+      Submit A Song
+    </NavLink>
     <NavLink className="link" to="/sign-out">
       Sign Out
     </NavLink>
@@ -35,7 +38,7 @@ const Nav = ({ user }) => {
   return (
     <nav>
       <div className="nav">
-        <NavLink className="logo" to="/">SongsU</NavLink>
+        <NavLink className="logo" to="/">SongsYOÜ</NavLink>
           {alwaysOptions}
           {user ? authenticatedOptions : unauthenticatedOptions}
       </div>
