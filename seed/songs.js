@@ -227,6 +227,84 @@ const main = async () => {
         "globalListens": 0,
         "reviews": []
       },
+      {
+        "title": "Self Esteem",
+        "artist": "The Offspring",
+        "releaseYear": "1994",
+        "genre": "Punk Rock",
+        "albumCover": "https://imgur.com/unHrca1.png",
+        "album": "Smash",
+        "songLength": "4:20",
+        "songLink": "eeWjzBHUdsI",
+        "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
+      },
+      {
+        "title": "Supersonic",
+        "artist": "Oasis",
+        "releaseYear": "1994",
+        "genre": "Britpop",
+        "albumCover": "https://imgur.com/GYf2hLI.png",
+        "album": "Definitely Maybe",
+        "songLength": "4:40",
+        "songLink": "BJKpUH2kJQg",
+        "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
+      },
+      {
+        "title": "Hate It or Love It",
+        "artist": "The Game feat. 50 Cent",
+        "releaseYear": "2004",
+        "genre": "Hip-hop",
+        "albumCover": "https://imgur.com/45B00g0.png",
+        "album": "The Documentary",
+        "songLength": "3:26",
+        "songLink": "B_1moEBS4TE",
+        "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
+      },
+      {
+        "title": "Loser",
+        "artist": "Beck",
+        "releaseYear": "1992",
+        "genre": "Alternative Rock",
+        "albumCover": "https://imgur.com/AFSRR94.png",
+        "album": "Mellow Gold",
+        "songLength": "3:53",
+        "songLink": "YgSPaXgAdzE",
+        "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
+      },
+      {
+        "title": "Knockin' on Heaven's Door",
+        "artist": "Guns N' Roses",
+        "releaseYear": "1992",
+        "genre": "Hard Rock",
+        "albumCover": "https://imgur.com/dJ86UEP.png",
+        "album": "Use Your Illusion II",
+        "songLength": "5:36",
+        "songLink": "f8OHybVhQwc",
+        "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
+      },
+      {
+        "title": "Get Lucky",
+        "artist": "Daft Punk feat Pharrell Williams",
+        "releaseYear": "2013",
+        "genre": "Disco, Funk",
+        "albumCover": "https://imgur.com/KhRlWw5.png",
+        "album": "Random Access Memories",
+        "songLength": "4:08",
+        "songLink": "5NV6Rdv1a3I",
+        "userClicks": 0,
+        "globalListens": 0,
+        "reviews": []
+      },
     ]
   await Song.insertMany(songs)
   console.log('Created songs!')
