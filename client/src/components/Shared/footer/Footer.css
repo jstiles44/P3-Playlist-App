@@ -28,5 +28,16 @@
   padding-right: 10px;
 }
 
+@media screen and (max-width: 1100px) {
+  .will , .lauren, .mike, .jake{
+    font-size: 14px;
+  }
+
+  .linked-in, .github {
+    height: 20px;
+  }
+
+}
+
 
 
