@@ -52,9 +52,8 @@ const updateSong = async (req, res) => {
 
 
 const updateListen = async (req, res) => {
-  console.log("request body", req.params)
   let song = await Song.findById(req.params.id)
-  console.log("song before logic", song)
+
 
   updatedSong = {
       "_id": song._id,
@@ -72,7 +71,6 @@ const updateListen = async (req, res) => {
   }
 
   song = updatedSong
-  console.log("updated song after logic", song)
   
   await Song.findByIdAndUpdate(req.params.id, song, { new: true }, (error, song) => {
     if (error) {
@@ -95,19 +93,6 @@ const deleteSong = async (req, res) => {
     throw new Error('Song not found')
   } catch (error) {
     res.status(500).json({ error: error.message })
-  }
-}
-//
-const deleteSongFromPlaylist = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const deleted = await Song.findByIdAndUpdate(id);
-    if (deleted) {
-      return res.status(200).send("Song Deleted")
-    }
-    throw new Error("Song Not Found")
-  } catch (error) {
-    res.status(500).json({error: error.message})
   }
 }
 

@@ -24,15 +24,13 @@ const Home = (props) => {
 
   const topListenedJSX = listensSort(topListened).slice(0, 5)
 
-  console.log(topRatedJSX)
-
   return (
     <Layout user={props.user}>
       <div className="home-body">
         <div className="home-carousels">
           <div className="home-text-images">
             <div className="welcome-text">
-            Welcome to SongYou, where your music experience is built for you and by you
+            Welcome to SongsYOÜ, where your music experience is built for YOÜ and by YOÜ
             </div>
             <ImageCarousel />
           </div>
