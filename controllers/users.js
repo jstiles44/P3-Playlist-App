@@ -88,44 +88,6 @@ const addSong = async (req, res) => {
   }
 }
 
-// const addClick = async (req, res) => {
-//   try {
-//     const user = await User.findById(req.params.id)
-//     const songClicked = await Song.findById(req.body.song)
-//     console.log("before adding song", user.playlist)
-
-//     const updatedSong = user.playlist.find((song) => {
-//       if (song._id.equals(songClicked._id)) {
-//         console.log("song in playlist", song)
-//         return {
-//           "title": song.title,
-//           "artist": song.artist,
-//           "releaseYear": song.releaseYear,
-//           "genre": song.genre,
-//           "albumCover": song.albumCover,
-//           "album": song.album,
-//           "songLength": song.songLength,
-//           "songLink": song.songLink,
-//           "userClicks": song.userClicks++
-//         } 
-//           return song
-//       }
-//     })
-  
-//     await user.save()
-//     console.log("after pushing song", user.playlist)
-//     const userPayload = {
-//       username: user.username,
-//       email: user.email,
-//       playlist: user.playlist,
-//       id: user._id
-//     }
-//     res.json(userPayload)
-//   } catch (error) {
-//     res.status(500).json({ error: error.message })
-//   }
-// }
-
 const addClick = async (req, res) => {
   try {
   const user = await User.findById(req.params.id)
@@ -133,7 +95,6 @@ const addClick = async (req, res) => {
  const userPlaylist = []
 
     user.playlist.map((song) => {
-      // console.log(song)
       (song._id.equals(songClicked._id)) ? userPlaylist.push(
         {
           "_id": song._id,
@@ -159,9 +120,7 @@ const addClick = async (req, res) => {
           "userClicks": song.userClicks
         })
     })
-      
-
-
+  
     user.playlist = userPlaylist
 
     await user.save()
@@ -175,8 +134,6 @@ const addClick = async (req, res) => {
       res.status(500).json({ error: error.message })
     }
   }
-
-
 
 
 const deleteSong = async (req, res) => {

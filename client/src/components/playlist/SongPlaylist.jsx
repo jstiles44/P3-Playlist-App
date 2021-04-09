@@ -7,9 +7,7 @@ import {editSong} from "../../services/songs"
 
 const SongPlaylist = (props) => {
   const deleteFromPlaylist = async () => {
-    // console.log(props.userId, props.songId);
     const response = await deleteSong(props.userId, props.songId);
-    console.log(response)
     props.setPlaylist(response);
   };
 
@@ -72,7 +70,6 @@ const SongPlaylist = (props) => {
       <div className="playlist-song-delete" onClick={deleteFromPlaylist}>
         X
       </div>
-      {/* <div className="playlist-song-play" onDoubleClick={play}>▶</div>  */}
     </div>
   );
 };
