@@ -15,14 +15,14 @@ const Home = (props) => {
     const fetchSongs = async () => {
       const songs = await getSongs();
       setTopListened(songs.slice());
-      setTopRated(songs.slice())
+      setTopRated(songs.slice());
     };
     fetchSongs();
   }, []);
 
   const topRatedJSX = ratingSort(topRated).slice(0, 5);
 
-  const topListenedJSX = listensSort(topListened).slice(0, 5)
+  const topListenedJSX = listensSort(topListened).slice(0, 5);
 
   return (
     <Layout user={props.user}>
@@ -30,7 +30,8 @@ const Home = (props) => {
         <div className="home-carousels">
           <div className="home-text-images">
             <div className="welcome-text">
-            Welcome to SongsYOÜ, where your music experience is built for YOÜ and by YOÜ
+              Welcome to SongsYOÜ, where your music experience is built for YOÜ
+              and by YOÜ
             </div>
             <ImageCarousel />
           </div>
