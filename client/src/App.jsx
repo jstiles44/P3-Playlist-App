@@ -66,9 +66,9 @@ function App() {
           <Route exact path="/profile">
             {user ? <Profile user={user} setPlaylist={setPlaylist} playlist={playlist}/> : <Redirect to="/sign-up" />}
           </Route>
-          <Route exact path="/create">
+          {/* <Route exact path="/create">
             {user ? <Create user={user} setUser={setUser}/> : <Redirect to="/sign-up" />}
-          </Route>
+          </Route> */}
         </Switch>
       }
     </div>

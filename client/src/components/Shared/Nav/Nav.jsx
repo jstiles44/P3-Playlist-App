@@ -6,9 +6,10 @@ const authenticatedOptions = (
     <NavLink className="link" to="/profile">
       Profile
     </NavLink>
-    <NavLink className='link' to='/create'>
+    {/* will be adding this back in at a later date once we have admin role set up. we would rather have the code commented out than deleted */}
+    {/* <NavLink className='link' to='/create'>
       Submit A Song
-    </NavLink>
+    </NavLink> */}
     <NavLink className="link" to="/sign-out">
       Sign Out
     </NavLink>
