@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const SongCarousel2 = (props) => {
   return (
-    <div className='recently-added'>
+    <div className='recently-added-two'>
       <h2>Top Rated Songs</h2>
     <Carousel autoPlay={true}
       interval='3000'

@@ -26,18 +26,12 @@ function App() {
       setPlaylist(response)
     }
     fetchUser()
-
-    // const fetchPlaylist = async () => {
-    //   const response = await getPlaylist(user._id)
-    //   setPlaylist(response.data)
-    // }
-    // fetchPlaylist()
   }, [])
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
-    }, 500)
+    }, 1000)
   },)
 
   const clearUser = () => {
@@ -72,9 +66,9 @@ function App() {
           <Route exact path="/profile">
             {user ? <Profile user={user} setPlaylist={setPlaylist} playlist={playlist}/> : <Redirect to="/sign-up" />}
           </Route>
-          <Route exact path="/create">
+          {/* <Route exact path="/create">
             {user ? <Create user={user} setUser={setUser}/> : <Redirect to="/sign-up" />}
-          </Route>
+          </Route> */}
         </Switch>
       }
     </div>

@@ -6,7 +6,7 @@ import './songCarousel.css'
 const SongCarousel = (props) => {
   return (
     <div className='recently-added'>
-      <h2>Most Popular</h2>
+      <h2>Most Listened To</h2>
     <Carousel autoPlay={true}
       interval='3000'
       infiniteLoop
@@ -19,7 +19,7 @@ const SongCarousel = (props) => {
           <div height='100%' key={index} className='album-art'>
             <Link to={`/explore/${song._id}`}>
             <img height='200px' width='25px' src={song.imgURL} alt={song.imgURL}
-               />
+                />
             <div className='album-title'>{song.title}</div>
               <div className='artist'>{song.artist}</div>
               </Link>

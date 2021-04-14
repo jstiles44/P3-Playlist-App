@@ -1,5 +1,11 @@
 # P3-Playlist-App
 
+# Overview
+The SongsYoü app allows users to search a given song bank and add songs to their personal playlists. Songs will be clickable and and details will render on page load (title, artist, etc.). A YouTube player will show on the details page. On the User's playlist page, an autoplay feature will show where the user can listen to their playlist. The Home page will show most popular and top rated songs that are determined by tracking user clicks and ratings. 
+
+![Landing-Page](https://i.imgur.com/Yos4geP.png)
+
+
 # Schema
 ```
 const Song = new Schema(
@@ -8,13 +14,19 @@ const Song = new Schema(
     artist: { type: String, required: true },
     releaseYear: { type: String, required: true },
     genre: { type: String, required: true },
-    albumCover: { type: String, required: true },
+    imgURL: { type: String, required: true },
     album: {type: String, required: true},
     songLength: { type: String, required: true },
-    // rating: {rating: Number, userId: String}
-    // ratings: [{ rating: Number, songId: { type: Schema.Types.ObjectId, ref: 'songs' } }] (will be added post mvp)
+    songLink: { type: String, required: true },
+    userClicks: { type: Number, required: true },
+    globalListens: {type: Number, required: true},
+    reviews: [{
+      rating: { type: Number, required: true },
+    }]
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true}}
 );
 
 ```
@@ -32,21 +44,7 @@ const User = new Schema(
 ```
   
 # Whimsical Diagram
-[https://whimsical.com/project-3-5e6r5Nf6QWV2LeXVVAUkNj]
-
-# Team Expectations
- [https://docs.google.com/document/d/1GhN5HvUg7l0-fWrjQbNgSDVdDREZRsePsqIo5hYoHM0/edit?usp=sharing]
-
-# Overview
-This app allows users to search a given song bank and add songs to their personal playlists.  Songs will be clickable and details will render upon click, such as title, artist, etc. Personal playlist analytics will render on the user home page.  These will be related to the percentage of songs (by title or by artist) in the playlist.
+![Component Hierarchy](https://i.imgur.com/8QnGobN.png)
 
 
-# MVP
-- Full Crud front end and back end
-- Render user playlist with full crud
-- Style with css grid/flexbox
-# Post-MVP
-- Install rating system aggregrate
-- Install rating system per user
-- Add admin role for adding songs to the site
-- Color Shift (dark mode, light mode)
+
