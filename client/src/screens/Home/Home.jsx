@@ -26,25 +26,28 @@ const Home = (props) => {
 
   return (
     <Layout user={props.user}>
-      <div className="home-body">
-        <div className="home-carousels">
-          <div className="home-text-images">
-            <div className="welcome-text">
-              Welcome to SongsYOÜ, where your music experience is built for YOÜ
-              and by YOÜ
+      {topRated.length < 1 ? <div className="loading-container-api">Loading
+        <div className="loader-api"></div>
+      </div> :
+        <div className="home-body">
+          <div className="home-carousels">
+            <div className="home-text-images">
+              <div className="welcome-text">
+                Welcome to SongsYOÜ, where your music experience is built for YOÜ
+                and by YOÜ
             </div>
-            <ImageCarousel />
+              <ImageCarousel />
+            </div>
+            <div className="songCarousels">
+              <div className="home-carousel-songs">
+                <SongCarousel recentlyAdded={topListenedJSX} />
+              </div>
+              <div className="home-carousel-songs2">
+                <SongCarousel2 topRated={topRatedJSX} />
+              </div>
+            </div>
           </div>
-          <div className="songCarousels">
-            <div className="home-carousel-songs">
-              <SongCarousel recentlyAdded={topListenedJSX} />
-            </div>
-            <div className="home-carousel-songs2">
-              <SongCarousel2 topRated={topRatedJSX} />
-            </div>
-          </div>
-        </div>
-      </div>
+        </div>}
     </Layout>
   );
 };

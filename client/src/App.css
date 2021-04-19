@@ -17,3 +17,15 @@
   color: #73D499;
   margin-bottom: 300px;
 }
+
+.loading-container-api-profile {
+  width: 100vw;
+  height: 100vh;
+  background-color: #33353C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  font-size: 25px;
+}

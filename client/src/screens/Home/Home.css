@@ -9,7 +9,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 25px;
 }
 
 .home-carousel-songs{
@@ -71,5 +71,46 @@
     grid-area: C;
     width: 270px;
     margin: 0;
+  }
+}
+
+
+.loading-container-api {
+  height: 80vh;
+  width: 98vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 25px;
+}
+
+.loader-api {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #54d986;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
