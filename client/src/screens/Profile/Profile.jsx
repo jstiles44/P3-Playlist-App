@@ -78,47 +78,61 @@ const Profile = (props) => {
 
   return (
     <Layout user={props.user}>
-      <div className="profile-container">
-        <div className="playlist-container">
-          <div className="playlist-header">
-          <div className="autoplay-features">
-          <div className="autolabel">AutoPlay{autoPlayButton}</div>
-          <div className="stop-button" onClick={handleClickStop}>
-              Stop Music
+      {!props.user ? <div className="loading-container-api">Loading
+        <div className="loader-api"></div>
+      </div> :
+        <div className="profile-container">
+          <div className="playlist-container">
+            <div className="playlist-header">
+              <div className="autoplay-features">
+                <div className="autolabel">AutoPlay{autoPlayButton}</div>
+                <div className="stop-button" onClick={handleClickStop}>
+                  Stop Music
           </div>
-          </div>
-          <div className="playlist-labels">
-            <div className="playlist-label-title">Title</div>{" "}
-            <div className="playlist-label-artist">Artist</div>{" "}
-            <div className="playlist-label-time">⏱</div>{" "}
-            <div className="playlist-label-rating">Released</div>
-            <div className="playlist-label-delete">Delete</div>
-            {/* <div className="playlist-label-play">Play</div> */}
-            {/* <div className="autoButton">{autoPlayButton}</div>
+              </div>
+              <div className="playlist-labels">
+                <div className="playlist-label-title">Title</div>{" "}
+                <div className="playlist-label-artist">Artist</div>{" "}
+                <div className="playlist-label-time">⏱</div>{" "}
+                <div className="playlist-label-rating">Released</div>
+                <div className="playlist-label-delete">Delete</div>
+                {/* <div className="playlist-label-play">Play</div> */}
+                {/* <div className="autoButton">{autoPlayButton}</div>
             <div className="stop" onClick={handleClickStop}>Stop</div> */}
+              </div>
             </div>
-            </div>
-          {loading ? (
-            <div className="loading-container">
-              <div className="loader"></div>
-            </div>
-          ) : (
-            <div>{playlistSongsJSX}</div>
-          )}
-        </div>
+            {loading ? (
+              <div className="loading-container">
+                <div className="loader"></div>
+              </div>
+            ) : (
+              <div>{playlistSongsJSX}</div>
+            )}
+          </div>
 
-        <div className="favorites-profile">
-          <div className="favorites-label">Your Favorites:</div>
-          {loading ? (
-            <div className="loading-container">
-              <div className="loader"></div>
+          <div className="favorites-profile">
+            <div className="favorites-label">Your Favorites:</div>
+            {loading ? (
+              <div className="loading-container">
+                <div className="loader"></div>
+              </div>
+            ) : (
+              <div className="favorites-box">{playlistFavoritesJSX}</div>
+            )}
+          </div>
+          {autoPlay ? (
+            <div className="player-cover">
+              <div className="player-window">
+                {loading ? (
+                  <div className="loading-container">
+                    <div className="loader"></div>
+                  </div>
+                ) : (
+                  <div className="songPlayer">{songPlayerJSX}</div>
+                )}
+              </div>
             </div>
           ) : (
-            <div className="favorites-box">{playlistFavoritesJSX}</div>
-          )}
-        </div>
-        {autoPlay ? (
-          <div className="player-cover">
             <div className="player-window">
               {loading ? (
                 <div className="loading-container">
@@ -128,19 +142,9 @@ const Profile = (props) => {
                 <div className="songPlayer">{songPlayerJSX}</div>
               )}
             </div>
-          </div>
-        ) : (
-          <div className="player-window">
-            {loading ? (
-              <div className="loading-container">
-                <div className="loader"></div>
-              </div>
-            ) : (
-              <div className="songPlayer">{songPlayerJSX}</div>
-            )}
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      }
     </Layout>
   );
 };
