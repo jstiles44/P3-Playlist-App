@@ -12,31 +12,31 @@ const SongPlaylist = (props) => {
   };
 
   const play = (e) => {
-    let x = props.index;
+    let index = props.index;
     props.setSongToPlay(props.songLink);
     const changeSong = () => {
       if (props.autoPlay === true) {
-        props.setSongToPlay(props.playlist[x + 1].songLink);
-        let timeout = convertTime(props.playlist[x + 1].songLength) * 1000;
-        if (x < props.playlist.length - 2) {
-          x++;
+        props.setSongToPlay(props.playlist[index + 1].songLink);
+        let timeout = convertTime(props.playlist[index + 1].songLength) * 1000;
+        if (index < props.playlist.length - 2) {
+          index++;
           setTimeout(changeSong, timeout);
         }
       }
     };
     const convertTime = (str) => {
       //sourced from https://stackoverflow.com/questions/9640266/convert-hhmmss-string-to-seconds-only-in-javascript
-      let p = str.split(":"),
-        s = 0,
-        m = 1;
-      while (p.length > 0) {
-        s += m * parseInt(p.pop(), 1000);
-        m *= 60;
+      let time = str.split(":"),
+        seconds = 0,
+        minutes = 1;
+      while (time.length > 0) {
+        seconds += minutes * parseInt(time.pop(), 10);
+        minutes *= 60;
       }
-      return s;
+      return seconds;
     };
     let timeout = convertTime(props.songLength) * 1000;
-    if (x < props.playlist.length - 1) {
+    if (index < props.playlist.length - 1) {
       setTimeout(changeSong, timeout);
     }
   };
