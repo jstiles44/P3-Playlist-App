@@ -43,7 +43,9 @@ const Details = (props) => {
   }
 
   if (!isLoaded) {
-    return <p>Loading...</p>;
+    return <div className="loading-container-api">Loading
+        <div className="loader-api"></div>
+      </div>
   }
 
   const addToPlaylist = async () => {

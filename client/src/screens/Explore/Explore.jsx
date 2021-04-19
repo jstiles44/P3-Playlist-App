@@ -51,19 +51,25 @@ const Explore = (props) => {
   }
 
   const songsJSX = queriedSongs.map((song, index) => (
-    <Song title={song.title} _id={song._id} imgURL={song.imgURL} artist={song.artist} key={index}/>
+    <Song title={song.title} _id={song._id} imgURL={song.imgURL} artist={song.artist} key={index} />
 
   ))
 
   return (
     <Layout user={props.user}>
-      <div className="filter-sort-container-explore">
+      {allSongs.length < 1 ? <div className="loading-container-api">Loading
+      <div className="loader-api"></div>
+      </div> :
+  <>
+    <div className="filter-sort-container-explore">
       <Filter onSubmit={handleSubmit} onChange={handleFilter} />
-        <Sort onsubmit={handleSubmit} onChange={handleSort} />
-      </div>
-      <div className="songs-explore">
-        {songsJSX}
-      </div>
+      <Sort onsubmit={handleSubmit} onChange={handleSort} />
+    </div>
+    <div className="songs-explore">
+      {songsJSX}
+    </div>
+  </>
+}
     </Layout>
   )
 }

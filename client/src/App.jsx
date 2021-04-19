@@ -64,7 +64,9 @@ function App() {
             {user ? <Details user={user} setPlaylist={setPlaylist} playlist={playlist}/> : <Redirect to="/sign-up" />}
           </Route>
           <Route exact path="/profile">
-            {user ? <Profile user={user} setPlaylist={setPlaylist} playlist={playlist}/> : <Redirect to="/sign-up" />}
+            {user ? <Profile user={user} setPlaylist={setPlaylist} playlist={playlist}/> : <div className="loading-container-api-profile">Loading Playlist
+        <div className="loader-api"></div>
+      </div>}
           </Route>
           {/* <Route exact path="/create">
             {user ? <Create user={user} setUser={setUser}/> : <Redirect to="/sign-up" />}
